@@ -1,4 +1,4 @@
-baseURL = "https://struggling-engineer.com/tech-blog/"
+baseURL = "https://struggling-engineer.com/"
 languageCode = "ja-jp"
 title = "ykitaaa's tech blog"
 theme = "DoIt"
