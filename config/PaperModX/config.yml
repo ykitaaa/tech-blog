@@ -1,9 +1,9 @@
 baseURL: "https://struggling-engineer.com/"
 languageCode: "ja-jp"
 title: "ykitaaa's tech blog"
-theme: "PaperMod"
+theme: "PaperModX"
 
 params:
   ShowToc: true
   TocOpen: true
-
+  TocSide: 'left'
