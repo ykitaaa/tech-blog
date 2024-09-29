@@ -1,9 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: true
-UseHugoToc: true
+draft: false
 showToc: true
 TocOpen: true
 TocSide: 'left'
+UseHugoToc: true
+ShowReadingTime: true
 ---
