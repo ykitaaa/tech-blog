@@ -7,3 +7,7 @@ params:
   ShowToc: true
   TocOpen: true
   TocSide: 'left'
+
+outputs:
+  blogdown::html_page:
+      toc: true
