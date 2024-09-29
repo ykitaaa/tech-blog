@@ -1,19 +1,4 @@
 baseURL = "https://struggling-engineer.com/"
 languageCode = "ja-jp"
 title = "ykitaaa's tech blog"
-theme =  "PaperModX"
-
-params = {
-  UseHugoToc = true
-  ShowToc = true
-  TocOpen = true
-  TocSide = 'left'
-}
-
-markup = {
-  tableOfContents = {
-    # Without this, Hugo ToC doesn't show h4 and higher
-    # https://github.com/alex-shpak/hugo-book/issues/52
-    endLevel = 6
-  }
-}
+theme = "PaperMod"
