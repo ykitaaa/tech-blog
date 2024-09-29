@@ -9,4 +9,3 @@ showToc = true
 TocOpen = true
 TocSide = 'left'
 ShowReadingTime = true
-buildDrafts = true
