@@ -4,7 +4,7 @@ title: "ykitaaa's tech blog"
 theme: "PaperModX"
 
 params:
-  UseHugoToc: true
   showToc: true
   TocOpen: true
   TocSide: 'left'
+  ShowReadingTime: true
