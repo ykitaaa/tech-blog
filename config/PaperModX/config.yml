@@ -5,6 +5,6 @@ theme: "PaperModX"
 
 params:
   UseHugoToc: true
-  ShowToc: true
+  showToc: true
   TocOpen: true
   TocSide: 'left'
