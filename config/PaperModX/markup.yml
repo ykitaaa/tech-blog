@@ -1,5 +1,4 @@
-markup:
-  tableOfContents:
-    # Without this, Hugo ToC doesn't show h4 and higher
-    # https://github.com/alex-shpak/hugo-book/issues/52
-    endLevel: 6
+tableOfContents:
+   # Without this, Hugo ToC doesn't show h4 and higher
+   # https://github.com/alex-shpak/hugo-book/issues/52
+   endLevel: 6
