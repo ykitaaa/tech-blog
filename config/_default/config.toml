@@ -10,3 +10,4 @@ TocOpen = true
 TocSide = 'left'
 ShowReadingTime = true
 summaryLength = 100
+buildDrafts = false
