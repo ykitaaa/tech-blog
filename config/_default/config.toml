@@ -3,11 +3,11 @@ languageCode = "ja"
 title = "ykitaaa's tech blog"
 theme = "PaperModX"
 defaultContentLanguage = 'ja'
+summaryLength = 100
+buildDrafts = false
 
 [params]
 showToc = true
 TocOpen = true
 TocSide = 'left'
 ShowReadingTime = true
-summaryLength = 100
-buildDrafts = false
