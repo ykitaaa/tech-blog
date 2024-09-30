@@ -3,6 +3,7 @@ languageCode = "ja"
 title = "ykitaaa's tech blog"
 theme = "PaperModX"
 defaultContentLanguage = 'ja'
+hasCJKLanguage = true
 summaryLength = 100
 buildDrafts = false
 
