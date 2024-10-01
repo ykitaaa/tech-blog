@@ -3,3 +3,4 @@ languageCode: "ja"
 title: "ykitaaa's tech blog"
 theme: "PaperModX"
 defaultContentLanguage: 'ja'
+hasCJKLanguage: true
