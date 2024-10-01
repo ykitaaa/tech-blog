@@ -21,7 +21,7 @@
 #enableEmoji = true
 
 baseURL = "https://struggling-engineer.com/"
-languageCode = "ja-jp"
+languageCode = "ja"
 title = "ykitaaa's tech blog"
 theme = "DoIt"
-
+defaultContentLanguage = "ja"
