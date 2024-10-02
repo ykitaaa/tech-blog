@@ -1,5 +1,5 @@
 baseURL = "https://struggling-engineer.com/"
-languageCode = "ja"
+#languageCode = "ja"
 title = "ykitaaa's tech blog"
 theme = "PaperModX"
 defaultContentLanguage = "ja"
