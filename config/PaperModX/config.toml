@@ -1,9 +1,9 @@
 baseURL = "https://struggling-engineer.com/"
 #languageCode = "ja"
+hasCJKLanguage = true
 title = "ykitaaa's tech blog"
 theme = "PaperModX"
 defaultContentLanguage = "ja"
-#hasCJKLanguage = true
 #summaryLength = 100
 buildDrafts = false
 
