@@ -10,5 +10,5 @@ buildDrafts = false
 [params]
 showToc = true
 TocOpen = true
-TocSide = "left"
+TocSide = "right"
 ShowReadingTime = true
