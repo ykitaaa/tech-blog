@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on ykitaaa&#39;s tech blog</title>
+    <link>https://struggling-engineer.com/categories/</link>
+    <description>Recent content in Categories on ykitaaa&#39;s tech blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 04 Oct 2024 11:24:00 +0000</lastBuildDate><atom:link href="https://struggling-engineer.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog</title>
+      <link>https://struggling-engineer.com/categories/blog/</link>
+      <pubDate>Fri, 04 Oct 2024 11:24:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/categories/blog/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Diary</title>
+      <link>https://struggling-engineer.com/categories/diary/</link>
+      <pubDate>Sun, 22 Sep 2024 11:13:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/categories/diary/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

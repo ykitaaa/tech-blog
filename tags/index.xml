@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on ykitaaa&#39;s tech blog</title>
+    <link>https://struggling-engineer.com/tags/</link>
+    <description>Recent content in Tags on ykitaaa&#39;s tech blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 04 Oct 2024 11:24:00 +0000</lastBuildDate><atom:link href="https://struggling-engineer.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuration</title>
+      <link>https://struggling-engineer.com/tags/configuration/</link>
+      <pubDate>Fri, 04 Oct 2024 11:24:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/tags/configuration/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://struggling-engineer.com/tags/hugo/</link>
+      <pubDate>Fri, 04 Oct 2024 11:24:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/tags/hugo/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
