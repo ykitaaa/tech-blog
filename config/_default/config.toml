@@ -5,7 +5,7 @@ title = "ykitaaa's tech blog"
 theme = "PaperModX"
 defaultContentLanguage = "ja"
 #summaryLength = 100
-buildDrafts = false
+buildDrafts = true
 
 [params]
 showToc = true
