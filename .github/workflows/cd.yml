@@ -6,7 +6,7 @@ on:
       - 'main'
 
   schedule:
-    - cron: '0 * * * *' # run every hour
+    - cron: '0 0 * * *' # run every hour
   workflow_dispatch:
     
 
@@ -69,17 +69,12 @@ jobs:
           npm start
           hugo
 
-      - name: Commit updated content
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Backup
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          commit_message: Sync content with Notion
-          file_pattern: '*.md'
-      - name: "Run if changes have been detected"
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
-        run: echo "Changes!"
-      - name: "Run if no changes have been detected"
-        if: steps.auto-commit-action.outputs.changes_detected == 'false'
-        run: echo "No Changes!"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: tech-blog-back
+          publish_dir: ./public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
