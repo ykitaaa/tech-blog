@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://struggling-engineer.com/posts/</loc>
-    <lastmod>2024-10-09T11:23:00+00:00</lastmod>
+    <loc>https://struggling-engineer.com/drafts/</loc>
+    <lastmod>2024-10-10T11:56:00+00:00</lastmod>
   </url><url>
     <loc>https://struggling-engineer.com/</loc>
+    <lastmod>2024-10-10T11:56:00+00:00</lastmod>
+  </url><url>
+    <loc>https://struggling-engineer.com/posts/</loc>
     <lastmod>2024-10-09T11:23:00+00:00</lastmod>
   </url><url>
     <loc>https://struggling-engineer.com/categories/blog/</loc>
