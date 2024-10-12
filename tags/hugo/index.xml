@@ -8,39 +8,6 @@
     <language>ja</language>
     <lastBuildDate>Fri, 04 Oct 2024 11:36:00 +0000</lastBuildDate><atom:link href="https://struggling-engineer.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GitHubActionsでHugoのビルドファイルをコミット</title>
-      <link>https://struggling-engineer.com/posts/githubactions%E3%81%A7hugo%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88/</link>
-      <pubDate>Fri, 04 Oct 2024 11:36:00 +0000</pubDate>
-      
-      <guid>https://struggling-engineer.com/posts/githubactions%E3%81%A7hugo%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88/</guid>
-      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-&lt;p&gt;Hugoでビルドしたマークダウンファイルを別リポジトリにバックアップしたいなーと&lt;/p&gt;
-&lt;p&gt;方法を模索していたら、どうやらGit HubのGit Actionsでビルドした後にコミットするには&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h1 id="はじめに">はじめに</h1>
-<p>Hugoでビルドしたマークダウンファイルを別リポジトリにバックアップしたいなーと</p>
-<p>方法を模索していたら、どうやらGit HubのGit Actionsでビルドした後にコミットするには</p>
-<p>コミット先ブランチに使うSSH用の秘密鍵と公開鍵が必要みたい。</p>
-<p>で、鍵はGit Bashを使えば簡単にできそうなので試してみる。</p>
-<h1 id="図テスト中">図（テスト中）</h1>
-<pre class="mermaid">sequenceDiagram 
-    participant C as client
-    participant  main as main branch of repository tech-blog
-    participant actions as repositoy tech-blog GitHubActions
-    participant back as backup branch of repository tech-blog
-C>>main: push
-main>>actions: build Hugo
-actions>>back: push
-
-
-# Git Bashとは？
-
-
-# 
-</pre>
-]]></content:encoded>
-    </item>
-    
-    <item>
       <title>Hugoの要約がめちゃくちゃ長くなる件</title>
       <link>https://struggling-engineer.com/posts/hugo%E3%81%AE%E8%A6%81%E7%B4%84%E3%81%8C%E3%82%81%E3%81%A1%E3%82%83%E3%81%8F%E3%81%A1%E3%82%83%E9%95%B7%E3%81%8F%E3%81%AA%E3%82%8B%E4%BB%B6/</link>
       <pubDate>Fri, 04 Oct 2024 11:24:00 +0000</pubDate>
