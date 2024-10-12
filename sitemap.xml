@@ -2,16 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://struggling-engineer.com/drafts/</loc>
-    <lastmod>2024-10-10T11:56:00+00:00</lastmod>
-  </url><url>
-    <loc>https://struggling-engineer.com/</loc>
-    <lastmod>2024-10-12T11:13:00+00:00</lastmod>
-  </url><url>
     <loc>https://struggling-engineer.com/posts/</loc>
     <lastmod>2024-10-12T11:13:00+00:00</lastmod>
   </url><url>
     <loc>https://struggling-engineer.com/posts/ssh%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E6%94%B9%E3%82%81%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B/</loc>
+    <lastmod>2024-10-12T11:13:00+00:00</lastmod>
+  </url><url>
+    <loc>https://struggling-engineer.com/</loc>
     <lastmod>2024-10-12T11:13:00+00:00</lastmod>
   </url><url>
     <loc>https://struggling-engineer.com/tags/githubactions/</loc>

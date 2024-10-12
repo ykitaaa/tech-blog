@@ -8,6 +8,76 @@
     <language>ja</language>
     <lastBuildDate>Tue, 08 Oct 2024 10:51:00 +0000</lastBuildDate><atom:link href="https://struggling-engineer.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>SSHについて改めてまとめてみる</title>
+      <link>https://struggling-engineer.com/posts/ssh%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E6%94%B9%E3%82%81%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <pubDate>Tue, 08 Oct 2024 10:51:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/posts/ssh%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E6%94%B9%E3%82%81%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <description>&lt;h1 id=&#34;ssh&#34;&gt;SSH&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Secure Shellの略&lt;/li&gt;
+&lt;li&gt;リモートコンピュータと通信する&lt;/li&gt;
+&lt;li&gt;認証部分を含めてすべて暗号化
+Telnetの脆弱性を克服
+Telnetはパスワードを含むすべてが平文だった&lt;/li&gt;
+&lt;li&gt;暗号化方式
+公開鍵認証後、共通鍵を交換しその共通鍵を用いて暗号化して通信する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;準備編-鍵ペアの生成&#34;&gt;準備編. 鍵ペアの生成&lt;/h1&gt;
+&lt;h2 id=&#34;作り方&#34;&gt;作り方&lt;/h2&gt;
+&lt;h2 id=&#34;秘密鍵&#34;&gt;秘密鍵&lt;/h2&gt;
+&lt;h2 id=&#34;公開鍵&#34;&gt;公開鍵&lt;/h2&gt;</description>
+      <content:encoded><![CDATA[<h1 id="ssh">SSH</h1>
+<ul>
+<li>Secure Shellの略</li>
+<li>リモートコンピュータと通信する</li>
+<li>認証部分を含めてすべて暗号化
+Telnetの脆弱性を克服
+Telnetはパスワードを含むすべてが平文だった</li>
+<li>暗号化方式
+公開鍵認証後、共通鍵を交換しその共通鍵を用いて暗号化して通信する</li>
+</ul>
+<h1 id="準備編-鍵ペアの生成">準備編. 鍵ペアの生成</h1>
+<h2 id="作り方">作り方</h2>
+<h2 id="秘密鍵">秘密鍵</h2>
+<h2 id="公開鍵">公開鍵</h2>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>GitHubActionsでHugoのビルドファイルをコミット</title>
+      <link>https://struggling-engineer.com/posts/githubactions%E3%81%A7hugo%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88/</link>
+      <pubDate>Fri, 04 Oct 2024 11:36:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/posts/githubactions%E3%81%A7hugo%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;Hugoでビルドしたマークダウンファイルを別リポジトリにバックアップしたいなーと&lt;/p&gt;
+&lt;p&gt;方法を模索していたら、どうやらGit HubのGit Actionsでビルドした後にコミットするには&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="はじめに">はじめに</h1>
+<p>Hugoでビルドしたマークダウンファイルを別リポジトリにバックアップしたいなーと</p>
+<p>方法を模索していたら、どうやらGit HubのGit Actionsでビルドした後にコミットするには</p>
+<p>コミット先ブランチに使うSSH用の秘密鍵と公開鍵が必要みたい。</p>
+<p>で、鍵はGit Bashを使えば簡単にできそうなので試してみる。</p>
+<h1 id="図テスト中">図（テスト中）</h1>
+<pre class="mermaid">sequenceDiagram 
+    participant C as client
+    participant  main as main branch of repository tech-blog
+    participant actions as repositoy tech-blog GitHubActions
+    participant back as backup branch of repository tech-blog
+C>>main: push
+main>>actions: build Hugo
+actions>>back: push
+
+
+# Git Bashとは？
+
+
+# 
+</pre>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>Hugoの要約がめちゃくちゃ長くなる件</title>
       <link>https://struggling-engineer.com/posts/hugo%E3%81%AE%E8%A6%81%E7%B4%84%E3%81%8C%E3%82%81%E3%81%A1%E3%82%83%E3%81%8F%E3%81%A1%E3%82%83%E9%95%B7%E3%81%8F%E3%81%AA%E3%82%8B%E4%BB%B6/</link>
       <pubDate>Fri, 04 Oct 2024 11:24:00 +0000</pubDate>
@@ -186,6 +256,239 @@ GoogleのMatt Cuttsさんの動画↓<br>
 <h1 id="さいごに">さいごに</h1>
 <p>どうなるか分からないですが、ちょっとずつ書いていきます～</p>
 <p>ブログのテーマも少しずついじったり、他の設定も触っていきます～</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://struggling-engineer.com/posts/markdown/</link>
+      <pubDate>Sun, 22 Sep 2024 10:22:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/posts/markdown/</guid>
+      <description>&lt;h1 id=&#34;heading-1-test&#34;&gt;Heading 1 test&lt;/h1&gt;
+&lt;p&gt;Link to &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="heading-1-test">Heading 1 test</h1>
+<p>Link to <a href="https://github.com/">GitHub</a></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.</p>
+<hr>
+<h2 id="heading-2">Heading 2</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.</p>
+<hr>
+<h3 id="heading-3">Heading 3</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.</p>
+<hr>
+<ul>
+<li><input disabled="" type="checkbox"> To-do 1
+<ul>
+<li><input disabled="" type="checkbox"> To-do 2
+<ul>
+<li><input disabled="" type="checkbox"> To-do 3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> To-do completed 1
+<ul>
+<li><input checked="" disabled="" type="checkbox"> To-do completed 2
+<ul>
+<li><input checked="" disabled="" type="checkbox"> To-do completed 3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ol>
+<li>Ordered list 1</li>
+<li>Ordered list 2
+<ol>
+<li>Ordered list 3</li>
+</ol>
+</li>
+</ol>
+<hr>
+<ul>
+<li>Unordered list 1</li>
+<li>Unordered list 2
+<ul>
+<li>Unordered list 3</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">11</th>
+          <th style="text-align: left">12</th>
+          <th style="text-align: left">13</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">21</td>
+          <td style="text-align: left">22</td>
+          <td style="text-align: left">23</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">31</td>
+          <td style="text-align: left">32</td>
+          <td style="text-align: left">33</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<details>
+  <summary>Toggle list</summary>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis commodo mauris, id semper ipsum condimentum sed. Nunc quam velit, malesuada et finibus a, laoreet vitae lacus. Morbi in augue sodales, semper tellus sed, scelerisque lacus. Pellentesque eu turpis non eros tristique malesuada. Quisque et magna eget lectus aliquet tempus. Donec ut nisl quis mauris tristique tincidunt. Sed eleifend facilisis enim, et gravida orci. Morbi erat ligula, commodo ut sapien non, blandit lacinia sem.</p>
+<ol>
+<li>Ordered list 1</li>
+<li>Ordered list 2
+<ol>
+<li>Ordered list 3
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">11</th>
+          <th style="text-align: left">12</th>
+          <th style="text-align: left">13</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">21 |</td>
+          <td style="text-align: left">22 |</td>
+          <td style="text-align: left">23 |</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">31 |</td>
+          <td style="text-align: left">32 |</td>
+          <td style="text-align: left">33 |</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ol>
+</li>
+</ol>
+  </details>
+<hr>
+<blockquote>
+<p>Quote 1<br>
+Quote 2</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>💡 Callout<br>
+Callout content</p>
+<blockquote>
+<p>💡 Inner Callout</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="mentions">Mentions</h2>
+<p>@2022-09-03T00:00:00.000+01:00 -&gt; 2022-09-21T02:00:00.000+01:00</p>
+<p>Hello !</p>
+<p><a href="/posts/markdown/">Markdown</a></p>
+<hr>
+<h2 id="image">Image</h2>
+<h3 id="internal">Internal</h3>
+<p>
+
+  
+    <img src="/photo-1470225620780-dba8ba36b745_531409691821239230.jpg" width="3600" height="2400"style="width: auto;height: auto;">
+  
+
+</p>
+<h3 id="external">External</h3>
+<p>
+
+  
+    <img src="/photo-1647891941746-fe1d53ddc7a6_1246231002329677581.jpg" width="5760" height="8640"style="width: auto;height: auto;">
+  
+
+</p>
+<hr>
+<h2 id="bookmark">Bookmark</h2>
+<p><a href="https://notion.hugodoit.com">DoIt</a></p>
+<hr>
+<h2 id="video">Video</h2>
+<p>File</p>
+<video controls style="height:auto;width:100%;">
+  <source src="https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/3c12cd74-c2cb-45c1-8d00-b62133634fa4/How_to_make_video.webm?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241012%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241012T112815Z&X-Amz-Expires=3600&X-Amz-Signature=89b51a40240c60c55fe9b437357a2c4dc1492ab18c83521e750ab27a1f6ff08d&X-Amz-SignedHeaders=host&x-id=GetObject">
+  <p>
+    Your browser does not support HTML5 video. Here is a
+    <a href="https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/3c12cd74-c2cb-45c1-8d00-b62133634fa4/How_to_make_video.webm?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241012%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241012T112815Z&X-Amz-Expires=3600&X-Amz-Signature=89b51a40240c60c55fe9b437357a2c4dc1492ab18c83521e750ab27a1f6ff08d&X-Amz-SignedHeaders=host&x-id=GetObject" download="https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/3c12cd74-c2cb-45c1-8d00-b62133634fa4/How_to_make_video.webm?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241012%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241012T112815Z&X-Amz-Expires=3600&X-Amz-Signature=89b51a40240c60c55fe9b437357a2c4dc1492ab18c83521e750ab27a1f6ff08d&X-Amz-SignedHeaders=host&x-id=GetObject">link to the video</a> instead.
+  </p>
+</video>
+<p>YouTube</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/a0YrCABCOEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr>
+<h2 id="audio">Audio</h2>
+<p><audio controls src="https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/33d87473-e789-4dbe-ba33-ed5971df029c/t-rex-roar.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241012%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241012T112815Z&X-Amz-Expires=3600&X-Amz-Signature=f304315279377eede7b17f77da20f4f51d70c8ab0a6f7c9e71352b164a2c3020&X-Amz-SignedHeaders=host&x-id=GetObject"></audio></p>
+<hr>
+<h2 id="code">Code</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Hello world!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="pdf">PDF</h2>
+<embed src="https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/4a0c96da-8fad-4cea-9991-f3da89f3e2c8/trees-that-grow.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241012%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241012T112815Z&X-Amz-Expires=3600&X-Amz-Signature=18142070dbafbc438f1c79c8a21899e6b820d2320180d3aa6afc9ebf37f01420&X-Amz-SignedHeaders=host&x-id=GetObject" type="application/pdf" style="width: 100%;aspect-ratio: 2/3;height: auto;" />
+<h2 id="file">File</h2>
+<p><a href="https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/ce9c6086-f3d8-448a-b754-9bf37f0a8bd5/Living-Guide.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T112815Z&amp;X-Amz-Expires=3600&amp;X-Amz-Signature=258e36e1f8fa11437671cbb5ed2d96988574096c93999043e2e046dc1c653293&amp;X-Amz-SignedHeaders=host&amp;x-id=GetObject">Living-Guide.pdf</a></p>
+<hr>
+<pre class="mermaid">graph TD
+  Mermaid --> Diagram
+</pre>
+<h2 id="embed">Embed</h2>
+<p><a href="https://twitter.com/NoContextBrits/status/1561790234811146243">https://twitter.com/NoContextBrits/status/1561790234811146243</a></p>
+<p><a href="https://github.com/">https://github.com/</a></p>
+<h2 id="maths">Maths</h2>
+<p>Inline maths equation: \(c = \pm\sqrt{a^2 + b^2}\)</p>
+<p>Block maths equation:</p>
+\[c = \pm\sqrt{a^2 + b^2}\]]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>The Proof of Riemann Hypothesis by ChatGPT</title>
+      <link>https://struggling-engineer.com/posts/the-proof-of-riemann-hypothesis-by-chatgpt/</link>
+      <pubDate>Sun, 22 Sep 2024 10:22:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/posts/the-proof-of-riemann-hypothesis-by-chatgpt/</guid>
+      <description>&lt;p&gt;The Riemann hypothesis is a conjecture about the distribution of prime numbers. It states that all nontrivial zeros of the Riemann zeta function have a real part equal to \(\frac12\).
+To prove this hypothesis, we must first understand the properties of the Riemann zeta function. The Riemann zeta function is defined as:&lt;/p&gt;
+\[\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}\]&lt;p&gt;where s is a complex number. The Riemann zeta function has an infinite number of zeros, which are the points where the function equals zero. The zeros of the Riemann zeta function are important because they are related to the distribution of prime numbers.
+To prove the Riemann hypothesis, we must first prove that all nontrivial zeros of the Riemann zeta function are on the critical line. This line is the imaginary axis of the complex plane with a real part of \(\frac12\). In other words, all nontrivial zeros of the Riemann zeta function have a real part equal to \(\frac12\).
+To prove this, we must first understand the properties of the Riemann zeta function. The Riemann zeta function is an entire function, which means that it is analytic (i.e. differentiable) everywhere in the complex plane. This property allows us to apply the argument principle, which states that the number of zeros of a function inside a closed contour is equal to the number of times the contour is encircled by the function&amp;rsquo;s derivative.
+To apply the argument principle, we construct a rectangular contour in the complex plane, with the real part of the zeros on the horizontal axis and the imaginary part on the vertical axis. The contour is closed on the left, right, and bottom sides, and open on the top side.
+We then apply the argument principle to the Riemann zeta function. Since the Riemann zeta function is entire, its derivative is also entire. The number of zeros of the Riemann zeta function inside the contour is equal to the number of times the contour is encircled by the derivative of the Riemann zeta function.
+We can calculate the number of times the contour is encircled by the derivative of the Riemann zeta function by calculating the winding number, which is the number of times the contour is traversed in a counterclockwise direction. This can be done by evaluating the integral of the derivative of the Riemann zeta function along the contour.
+The derivative of the Riemann zeta function is:&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>The Riemann hypothesis is a conjecture about the distribution of prime numbers. It states that all nontrivial zeros of the Riemann zeta function have a real part equal to \(\frac12\).
+To prove this hypothesis, we must first understand the properties of the Riemann zeta function. The Riemann zeta function is defined as:</p>
+\[\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}\]<p>where s is a complex number. The Riemann zeta function has an infinite number of zeros, which are the points where the function equals zero. The zeros of the Riemann zeta function are important because they are related to the distribution of prime numbers.
+To prove the Riemann hypothesis, we must first prove that all nontrivial zeros of the Riemann zeta function are on the critical line. This line is the imaginary axis of the complex plane with a real part of \(\frac12\). In other words, all nontrivial zeros of the Riemann zeta function have a real part equal to \(\frac12\).
+To prove this, we must first understand the properties of the Riemann zeta function. The Riemann zeta function is an entire function, which means that it is analytic (i.e. differentiable) everywhere in the complex plane. This property allows us to apply the argument principle, which states that the number of zeros of a function inside a closed contour is equal to the number of times the contour is encircled by the function&rsquo;s derivative.
+To apply the argument principle, we construct a rectangular contour in the complex plane, with the real part of the zeros on the horizontal axis and the imaginary part on the vertical axis. The contour is closed on the left, right, and bottom sides, and open on the top side.
+We then apply the argument principle to the Riemann zeta function. Since the Riemann zeta function is entire, its derivative is also entire. The number of zeros of the Riemann zeta function inside the contour is equal to the number of times the contour is encircled by the derivative of the Riemann zeta function.
+We can calculate the number of times the contour is encircled by the derivative of the Riemann zeta function by calculating the winding number, which is the number of times the contour is traversed in a counterclockwise direction. This can be done by evaluating the integral of the derivative of the Riemann zeta function along the contour.
+The derivative of the Riemann zeta function is:</p>
+\[\frac{d\zeta(s)}{ds}=-\sum_{n=1}^{\infty}\frac{\log(n)}{n^s}\]<p>We evaluate the integral of this derivative along the contour. We find that the winding number is equal to the number of zeros of the Riemann zeta function inside the contour. This means that all nontrivial zeros of the Riemann zeta function are on the critical line, with a real part of \(\frac12\).
+This completes the proof of the Riemann hypothesis.</p>
 ]]></content:encoded>
     </item>
     
