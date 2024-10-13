@@ -9,6 +9,7 @@ buildDrafts = true
 [menus]
     [[menus.main]]
         name = 'About'
+        pageRef = '/about'
         url = '/about'
         weight = 10
 
