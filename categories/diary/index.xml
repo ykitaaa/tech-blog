@@ -16,13 +16,13 @@
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
 &lt;p&gt;はじめまして、ykitaaaと申します。&lt;/p&gt;
 &lt;p&gt;以下サイトを参考にブログをとりあえず立ち上げてみました。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.code-del.com/posts/notion-hugo%E3%81%A7%E5%AF%9D%E8%BB%A2%E3%81%B3%E3%81%AA%E3%81%8C%E3%82%89%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B8%E3%81%8F/&#34;&gt;https://blog.code-del.com/posts/notion-hugoで寝転びながらブログを書く/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.code-del.com/posts/notion-hugo%E3%81%A7%E5%AF%9D%E8%BB%A2%E3%81%B3%E3%81%AA%E3%81%8C%E3%82%89%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B8%E3%81%8F/&#34; rel=&#34;external&#34;&gt;https://blog.code-del.com/posts/notion-hugoで寝転びながらブログを書く/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;⇒めんどくさがりの自分にぴったりでした！ありがとうございます！！&lt;br&gt;
 　ブログタイトルがすばらしい。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="はじめに">はじめに</h1>
 <p>はじめまして、ykitaaaと申します。</p>
 <p>以下サイトを参考にブログをとりあえず立ち上げてみました。</p>
-<p><a href="https://blog.code-del.com/posts/notion-hugo%E3%81%A7%E5%AF%9D%E8%BB%A2%E3%81%B3%E3%81%AA%E3%81%8C%E3%82%89%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B8%E3%81%8F/">https://blog.code-del.com/posts/notion-hugoで寝転びながらブログを書く/</a></p>
+<p><a href="https://blog.code-del.com/posts/notion-hugo%E3%81%A7%E5%AF%9D%E8%BB%A2%E3%81%B3%E3%81%AA%E3%81%8C%E3%82%89%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B8%E3%81%8F/" rel="external">https://blog.code-del.com/posts/notion-hugoで寝転びながらブログを書く/</a></p>
 <p>⇒めんどくさがりの自分にぴったりでした！ありがとうございます！！<br>
 　ブログタイトルがすばらしい。。。</p>
 <h1 id="ブログのシステム構成">ブログのシステム構成</h1>
@@ -68,7 +68,7 @@
 <ul>
 <li>SEO的に良い
 GoogleのMatt Cuttsさんの動画↓<br>
-<a href="https://youtu.be/-I4rWnQxxkM?si=HQwAxQ-DAv52PJeJ">https://youtu.be/-I4rWnQxxkM?si=HQwAxQ-DAv52PJeJ</a><br>
+<a href="https://youtu.be/-I4rWnQxxkM?si=HQwAxQ-DAv52PJeJ" rel="external">https://youtu.be/-I4rWnQxxkM?si=HQwAxQ-DAv52PJeJ</a><br>
 ⇒ そこまで大きな要因ではないけど、速度は検索順位に影響しているみたい</li>
 <li>読者をイライラさせない（超大事）</li>
 </ul>
@@ -115,7 +115,7 @@ GoogleのMatt Cuttsさんの動画↓<br>
 <p>Notionのトークン名が誤って設定しているせいでNotionからデータ取得ができてませんでした。。。
 トークン名は「NOTION_TOKEN」固定ですので、少しご注意を。。。</p>
 <p>手順は守りましょう！</p>
-<p><a href="https://github.com/HEIGE-PCloud/Notion-Hugo?tab=readme-ov-file#setup-secrets-for-github-action">https://github.com/HEIGE-PCloud/Notion-Hugo?tab=readme-ov-file#setup-secrets-for-github-action</a></p>
+<p><a href="https://github.com/HEIGE-PCloud/Notion-Hugo?tab=readme-ov-file#setup-secrets-for-github-action" rel="external">https://github.com/HEIGE-PCloud/Notion-Hugo?tab=readme-ov-file#setup-secrets-for-github-action</a></p>
 <h1 id="さいごに">さいごに</h1>
 <p>どうなるか分からないですが、ちょっとずつ書いていきます～</p>
 <p>ブログのテーマも少しずついじったり、他の設定も触っていきます～</p>
