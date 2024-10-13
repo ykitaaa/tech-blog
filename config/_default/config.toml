@@ -6,6 +6,11 @@ theme = "PaperModX"
 defaultContentLanguage = "ja"
 #summaryLength = 100
 buildDrafts = true
+[menus]
+    [[menus.main]]
+        name = 'About'
+        pageRef = '/about'
+        weight = 10
 
 [params]
 showToc = true
