@@ -18,3 +18,4 @@ showToc = true
 TocOpen = true
 TocSide = "right"
 ShowReadingTime = true
+ShowAuthor = false
