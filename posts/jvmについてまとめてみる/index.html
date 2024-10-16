@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ja" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>JVMについてまとめてみる | ykitaaa&#39;s tech blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="JVMとは？
+
+Java Virtual Machineの略
+主に以下機能を提供
+
+バイトコードの実行
+メモリ管理（ガーベジコレクション）
+スレッド管理
+プラットフォームに依存しない動作環境
+
+
+
+JVMの歴史
+Java HotSpot VMとは？
+GCとは？
+
+Garbage Collectionの略
+JavaSEで利用するJava HotSpot VMで行われる
+
+
+GCの仕組み
+GCが必要な理由
+参考
+
+https://docs.oracle.com/javase/jp/14/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304
+https://docs.oracle.com/cd/F30578_01/vm/java-virtual-machine-technology-overview.html
+
+ChatGPT
+Java HotSpot VMも含めたJVM（Java Virtual Machine）の歴史は、Javaの発展と密接に関係しています。ここでは、JVMの歴史の主要な出来事と、Java HotSpot VMの登場に焦点を当てながら解説します。">
+<meta name="author" content="">
+<link rel="canonical" href="https://struggling-engineer.com/posts/jvm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.7da7716a1f2d0725f74c6ae7f8d6adafc43aabe2b366b65bfbf433448e2a2001.css" integrity="sha256-fadxah8tByX3TGrn&#43;Natr8Q6q&#43;KzZrZb&#43;/QzRI4qIAE=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://struggling-engineer.com/favicon.ico">
+<link rel="apple-touch-icon" href="https://struggling-engineer.com/apple-touch-icon.png">
+<link rel="alternate" hreflang="ja" href="https://struggling-engineer.com/posts/jvm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B/">
+
+<meta name="twitter:title" content="JVMについてまとめてみる | ykitaaa&#39;s tech blog" />
+<meta name="twitter:description" content="JVMとは？
+
+Java Virtual Machineの略
+主に以下機能を提供
+
+バイトコードの実行
+メモリ管理（ガーベジコレクション）
+スレッド管理
+プラットフォームに依存しない動作環境
+
+
+
+JVMの歴史
+Java HotSpot VMとは？
+GCとは？
+
+Garbage Collectionの略
+JavaSEで利用するJava HotSpot VMで行われる
+
+
+GCの仕組み
+GCが必要な理由
+参考
+
+https://docs.oracle.com/javase/jp/14/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304
+https://docs.oracle.com/cd/F30578_01/vm/java-virtual-machine-technology-overview.html
+
+ChatGPT
+Java HotSpot VMも含めたJVM（Java Virtual Machine）の歴史は、Javaの発展と密接に関係しています。ここでは、JVMの歴史の主要な出来事と、Java HotSpot VMの登場に焦点を当てながら解説します。" />
+<meta property="og:title" content="JVMについてまとめてみる | ykitaaa&#39;s tech blog" />
+<meta property="og:description" content="JVMとは？
+
+Java Virtual Machineの略
+主に以下機能を提供
+
+バイトコードの実行
+メモリ管理（ガーベジコレクション）
+スレッド管理
+プラットフォームに依存しない動作環境
+
+
+
+JVMの歴史
+Java HotSpot VMとは？
+GCとは？
+
+Garbage Collectionの略
+JavaSEで利用するJava HotSpot VMで行われる
+
+
+GCの仕組み
+GCが必要な理由
+参考
+
+https://docs.oracle.com/javase/jp/14/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304
+https://docs.oracle.com/cd/F30578_01/vm/java-virtual-machine-technology-overview.html
+
+ChatGPT
+Java HotSpot VMも含めたJVM（Java Virtual Machine）の歴史は、Javaの発展と密接に関係しています。ここでは、JVMの歴史の主要な出来事と、Java HotSpot VMの登場に焦点を当てながら解説します。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://struggling-engineer.com/posts/jvm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B/" />
+<meta property="article:section" content="posts" />
+  <meta property="article:published_time" content="2024-10-14T03:23:00&#43;00:00" />
+  <meta property="article:modified_time" content="2024-10-15T13:26:00&#43;00:00" />
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://struggling-engineer.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "JVMについてまとめてみる",
+      "item": "https://struggling-engineer.com/posts/jvm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JVMについてまとめてみる | ykitaaa's tech blog",
+  "name": "JVMについてまとめてみる",
+  "description": "JVMとは？ Java Virtual Machineの略 主に以下機能を提供 バイトコードの実行 メモリ管理（ガーベジコレクション） スレッド管理 プラットフォームに依存しない動作環境 JVMの歴史 Java HotSpot VMとは？ GCとは？ Garbage Collectionの略 JavaSEで利用するJava HotSpot VMで行われる GCの仕組み GCが必要な理由 参考 https://docs.oracle.com/javase/jp/14/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304 https://docs.oracle.com/cd/F30578_01/vm/java-virtual-machine-technology-overview.html ChatGPT Java HotSpot VMも含めたJVM（Java Virtual Machine）の歴史は、Javaの発展と密接に関係しています。ここでは、JVMの歴史の主要な出来事と、Java HotSpot VMの登場に焦点を当てながら解説します。\n",
+  "keywords": [
+    
+  ],
+  "wordCount" : "2503",
+  "inLanguage": "ja",
+  "datePublished": "2024-10-14T03:23:00Z",
+  "dateModified": "2024-10-15T13:26:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://struggling-engineer.com/posts/jvm%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%82%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ykitaaa's tech blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://struggling-engineer.com/favicon.ico"
+    }
+  }
+}
+</script>
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary-bg: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list-page {
+                background: var(--theme);
+            }
+
+            .list-page:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list-page:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+</head>
+
+<body class=" type-posts kind-page layout-" id="top"><script data-no-instant>
+function switchTheme(theme) {
+  switch (theme) {
+    case 'light':
+      document.body.classList.remove('dark');
+      break;
+    case 'dark':
+      document.body.classList.add('dark');
+      break;
+    
+    default:
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+  }
+}
+
+function isDarkTheme() {
+  return document.body.className.includes("dark");
+}
+
+function getPrefTheme() {
+  return localStorage.getItem("pref-theme");
+}
+
+function setPrefTheme(theme) {
+  switchTheme(theme)
+  localStorage.setItem("pref-theme", theme);
+}
+
+const toggleThemeCallbacks = {}
+toggleThemeCallbacks['main'] = (isDark) => {
+  
+  if (isDark) {
+    setPrefTheme('light');
+  } else {
+    setPrefTheme('dark');
+  }
+}
+
+
+
+
+window.addEventListener('toggle-theme', function() {
+  
+  const isDark = isDarkTheme()
+  for (const key in toggleThemeCallbacks) {
+    toggleThemeCallbacks[key](isDark)
+  }
+});
+
+
+function toggleThemeListener() {
+  
+  window.dispatchEvent(new CustomEvent('toggle-theme'));
+}
+
+</script>
+<script>
+  
+  (function() {
+    const defaultTheme = 'light';
+    const prefTheme = getPrefTheme();
+    const theme = prefTheme ? prefTheme : defaultTheme;
+
+    switchTheme(theme);
+  })();
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://struggling-engineer.com/" accesskey="h" title="ykitaaa&#39;s tech blog (Alt + H)">ykitaaa&#39;s tech blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://struggling-engineer.com/about/" title="About"
+                >About
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main post">
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">JVMについてまとめてみる<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup></h1>
+    <div class="post-meta"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>10月 14, 2024</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
+  <span>5 分</span></span>
+
+      
+      
+    </div>
+  </header> <div class="toc side right">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目次</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#jvm%e3%81%a8%e3%81%af" aria-label="JVMとは？">JVMとは？</a></li>
+                <li>
+                    <a href="#jvm%e3%81%ae%e6%ad%b4%e5%8f%b2" aria-label="JVMの歴史">JVMの歴史</a></li>
+                <li>
+                    <a href="#java-hotspot-vm%e3%81%a8%e3%81%af" aria-label="Java HotSpot VMとは？">Java HotSpot VMとは？</a></li>
+                <li>
+                    <a href="#gc%e3%81%a8%e3%81%af" aria-label="GCとは？">GCとは？</a></li>
+                <li>
+                    <a href="#gc%e3%81%ae%e4%bb%95%e7%b5%84%e3%81%bf" aria-label="GCの仕組み">GCの仕組み</a></li>
+                <li>
+                    <a href="#gc%e3%81%8c%e5%bf%85%e8%a6%81%e3%81%aa%e7%90%86%e7%94%b1" aria-label="GCが必要な理由">GCが必要な理由</a></li>
+                <li>
+                    <a href="#%e5%8f%82%e8%80%83" aria-label="参考">参考</a></li>
+                <li>
+                    <a href="#chatgpt" aria-label="ChatGPT">ChatGPT</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1-java%e3%81%a8jvm%e3%81%ae%e8%aa%95%e7%94%9f19911995%e5%b9%b4" aria-label="1. JavaとJVMの誕生（1991〜1995年）">1. <strong>JavaとJVMの誕生（1991〜1995年）</strong></a></li>
+                <li>
+                    <a href="#2-jvm%e3%81%ae%e5%88%9d%e6%9c%9f%e6%ae%b5%e9%9a%8e19951998%e5%b9%b4" aria-label="2. JVMの初期段階（1995〜1998年）">2. <strong>JVMの初期段階（1995〜1998年）</strong></a></li>
+                <li>
+                    <a href="#3-hotspot-vm%e3%81%ae%e7%99%bb%e5%a0%b41999%e5%b9%b4" aria-label="3. HotSpot VMの登場（1999年）">3. <strong>HotSpot VMの登場（1999年）</strong></a></li>
+                <li>
+                    <a href="#4-java-se%e3%81%ae%e9%80%b2%e5%8c%96%e3%81%a8jvm%e3%81%ae%e6%94%b9%e5%96%8420002010%e5%b9%b4" aria-label="4. Java SEの進化とJVMの改善（2000〜2010年）">4. <strong>Java SEの進化とJVMの改善（2000〜2010年）</strong></a></li>
+                <li>
+                    <a href="#5-graalvm%e3%81%a8jvm%e3%81%ae%e9%80%b2%e5%8c%962010%e5%b9%b4%e4%bb%a5%e9%99%8d" aria-label="5. GraalVMとJVMの進化（2010年以降）">5. <strong>GraalVMとJVMの進化（2010年以降）</strong></a></li>
+                <li>
+                    <a href="#6-jvm%e3%81%ae%e6%9c%aa%e6%9d%a5" aria-label="6. JVMの未来">6. <strong>JVMの未来</strong></a></li>
+                <li>
+                    <a href="#%e3%81%be%e3%81%a8%e3%82%81" aria-label="まとめ">まとめ</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="jvmとは">JVMとは？<a hidden class="anchor" aria-hidden="true" href="#jvmとは">¶</a></h1>
+<ul>
+<li>Java Virtual Machineの略</li>
+<li>主に以下機能を提供
+<ul>
+<li>バイトコードの実行</li>
+<li>メモリ管理（ガーベジコレクション）</li>
+<li>スレッド管理</li>
+<li>プラットフォームに依存しない動作環境</li>
+</ul>
+</li>
+</ul>
+<h1 id="jvmの歴史">JVMの歴史<a hidden class="anchor" aria-hidden="true" href="#jvmの歴史">¶</a></h1>
+<h1 id="java-hotspot-vmとは">Java HotSpot VMとは？<a hidden class="anchor" aria-hidden="true" href="#java-hotspot-vmとは">¶</a></h1>
+<h1 id="gcとは">GCとは？<a hidden class="anchor" aria-hidden="true" href="#gcとは">¶</a></h1>
+<ul>
+<li>Garbage Collectionの略</li>
+<li>JavaSEで利用するJava HotSpot VMで行われる</li>
+</ul>
+<h1 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">¶</a></h1>
+<h1 id="gcの仕組み">GCの仕組み<a hidden class="anchor" aria-hidden="true" href="#gcの仕組み">¶</a></h1>
+<h1 id="gcが必要な理由">GCが必要な理由<a hidden class="anchor" aria-hidden="true" href="#gcが必要な理由">¶</a></h1>
+<h1 id="参考">参考<a hidden class="anchor" aria-hidden="true" href="#参考">¶</a></h1>
+<ul>
+<li><a href="https://docs.oracle.com/javase/jp/14/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304" rel="external">https://docs.oracle.com/javase/jp/14/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304</a></li>
+<li><a href="https://docs.oracle.com/cd/F30578_01/vm/java-virtual-machine-technology-overview.html" rel="external">https://docs.oracle.com/cd/F30578_01/vm/java-virtual-machine-technology-overview.html</a></li>
+</ul>
+<h1 id="chatgpt">ChatGPT<a hidden class="anchor" aria-hidden="true" href="#chatgpt">¶</a></h1>
+<p>Java HotSpot VMも含めたJVM（Java Virtual Machine）の歴史は、Javaの発展と密接に関係しています。ここでは、JVMの歴史の主要な出来事と、Java HotSpot VMの登場に焦点を当てながら解説します。</p>
+<h3 id="1-javaとjvmの誕生19911995年">1. <strong>JavaとJVMの誕生（1991〜1995年）</strong><a hidden class="anchor" aria-hidden="true" href="#1-javaとjvmの誕生19911995年">¶</a></h3>
+<ul>
+<li><strong>1991年</strong>：Javaの歴史は、James Goslingを中心としたSun Microsystemsのプロジェクト「Green Project」から始まります。もともとは、家電製品や小型デバイス向けのプログラミング言語「Oak」を開発するプロジェクトでしたが、これが後にJavaへと発展します。</li>
+<li><strong>1995年</strong>：Sun Microsystemsは、Javaを正式に発表します。Javaは「Write Once, Run Anywhere（1度書けば、どこでも動く）」という特徴を持ち、プラットフォームに依存せずにプログラムを実行できるJVMがこのビジョンを実現するために設計されました。
+<ul>
+<li>JVMは、バイトコード（中間言語）を解釈し、どのプラットフォームでも実行できる環境を提供しました。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-jvmの初期段階19951998年">2. <strong>JVMの初期段階（1995〜1998年）</strong><a hidden class="anchor" aria-hidden="true" href="#2-jvmの初期段階19951998年">¶</a></h3>
+<ul>
+<li>Javaの最初期のJVMは、<strong>インタプリタ</strong>型であり、バイトコードを1つずつ解釈して実行していました。これは、Javaプログラムをあらゆるプラットフォームで動作させるためには有効でしたが、実行速度が遅いという問題がありました。</li>
+<li>このインタプリタ方式のJVMでは、大規模な商用アプリケーションにおいては性能不足が問題となり、より高速な実行方式が求められるようになっていきました。</li>
+</ul>
+<h3 id="3-hotspot-vmの登場1999年">3. <strong>HotSpot VMの登場（1999年）</strong><a hidden class="anchor" aria-hidden="true" href="#3-hotspot-vmの登場1999年">¶</a></h3>
+<ul>
+<li><strong>1997年</strong>：Sun Microsystemsは、<strong>Longview Technologies</strong>からHotSpotという技術を買収します。この技術は、動的に最適化されたコンパイラ技術を使って、頻繁に実行されるバイトコードをネイティブコードに変換するという革新的なものでした。</li>
+<li><strong>1999年</strong>：Java 1.3とともに、<strong>Java HotSpot VM</strong>がリリースされます。HotSpotは、頻繁に実行される「ホットスポット」と呼ばれるコード部分を検出し、それをネイティブコードに変換することで、実行速度を大幅に向上させる仕組みです。
+<ul>
+<li><strong>JIT（Just-In-Time）コンパイル</strong>：HotSpot VMの中心となる技術で、プログラムの実行時にバイトコードをネイティブコードにコンパイルし、実行パフォーマンスを向上させます。</li>
+<li>これにより、Javaは当時の他の言語（CやC++など）と比べても十分な速度を持ち、企業や開発者の間で急速に普及しました。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-java-seの進化とjvmの改善20002010年">4. <strong>Java SEの進化とJVMの改善（2000〜2010年）</strong><a hidden class="anchor" aria-hidden="true" href="#4-java-seの進化とjvmの改善20002010年">¶</a></h3>
+<ul>
+<li><strong>2004年</strong>：Java 5がリリースされ、JVMにはさらに多くの最適化や新機能が導入されました。この時点で、Javaはサーバーサイドやエンタープライズ向けアプリケーションで主流となり、JVMのパフォーマンスも非常に重要な要素になっていました。
+<ul>
+<li><strong>ガベージコレクション</strong>の最適化：HotSpot VMでは、世代別ガベージコレクション（Generational GC）が導入され、メモリ管理が大幅に効率化されました。</li>
+<li><strong>64ビット対応</strong>：64ビットアーキテクチャが一般的になり、JVMもこれに対応するようになりました。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-graalvmとjvmの進化2010年以降">5. <strong>GraalVMとJVMの進化（2010年以降）</strong><a hidden class="anchor" aria-hidden="true" href="#5-graalvmとjvmの進化2010年以降">¶</a></h3>
+<ul>
+<li><strong>2010年</strong>：OracleがSun Microsystemsを買収し、JavaおよびHotSpot VMはOracleの管理下に入りました。この頃からJVMの技術的進化はさらに加速しました。</li>
+<li><strong>2014年</strong>：Java 8がリリースされ、<strong>ラムダ式</strong>や<strong>ストリームAPI</strong>といった新機能がJVMに導入されました。Java 8は、モダンJavaの基盤を作り上げ、Javaエコシステム全体の進化に貢献しました。</li>
+<li><strong>GraalVMの登場（2018年）</strong>：GraalVMは、JVMの新しい実装で、Javaだけでなく他の言語（JavaScript、Ruby、Python、Rなど）も同じランタイムで動作させることができる多言語対応の仮想マシンです。さらに、ネイティブイメージのサポートにより、起動時間やメモリ使用量を大幅に改善できるようになりました。
+<ul>
+<li>GraalVMはHotSpot VMと互換性がありつつも、特定のユースケース（特にクラウド環境やマイクロサービス）に対してさらなる最適化を提供します。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-jvmの未来">6. <strong>JVMの未来</strong><a hidden class="anchor" aria-hidden="true" href="#6-jvmの未来">¶</a></h3>
+<ul>
+<li>JVMは、現在も進化を続けています。特に、クラウドネイティブなアプリケーションやマイクロサービスアーキテクチャに対する最適化が進んでおり、軽量化や効率化が求められています。
+<ul>
+<li><strong>ZGC</strong>や<strong>Shenandoah GC</strong>といった新しいガベージコレクタが登場し、大規模なメモリ管理やリアルタイム性能がさらに向上しています。</li>
+<li><strong>Project Loom</strong>：Javaの並行処理のパフォーマンスを大幅に改善する仮想スレッドを導入するプロジェクトです。これにより、JVMはさらに大規模なスケールでの並行処理を効率的に扱うことができるようになります。</li>
+</ul>
+</li>
+</ul>
+<h3 id="まとめ">まとめ<a hidden class="anchor" aria-hidden="true" href="#まとめ">¶</a></h3>
+<ul>
+<li><strong>JVMの誕生（1995年）</strong>：Javaの「Write Once, Run Anywhere」というビジョンの実現のために、Javaプログラムを解釈し実行するための仮想マシンとして設計されました。</li>
+<li><strong>HotSpot VMの登場（1999年）</strong>：JITコンパイルを用いたパフォーマンスの向上が特徴で、Javaの普及に大きく貢献しました。</li>
+<li><strong>継続的な進化（2000年以降）</strong>：ガベージコレクションの改善、64ビット対応、さらにはGraalVMのような新しいJVMの実装によって、Javaはエンタープライズからクラウドまで幅広く使われ続けています。</li>
+</ul>
+<p>Java HotSpot VMは、現在でもJVMの中核的な実装として広く使われており、その歴史はJavaの成長と共に歩んできたと言えます。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+    <div class="comments-separator"></div>
+</article>
+    </main>
+    
+<footer class="footer">
+  <span>&copy; 2024 <a href="https://struggling-engineer.com/">ykitaaa&#39;s tech blog</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://github.com/reorx/hugo-PaperModX/" rel="noopener" target="_blank">PaperModX</a>
+  </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
+    }
+
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+<script>
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
+</script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
+
+
+
+
+<script>
+  
+  
+  (function() {
+    const enableTocScroll = '1' == '1'
+    if (!enableTocScroll) {
+      return
+    }
+    if (!document.querySelector('.toc')) {
+      console.log('no toc found, ignore toc scroll')
+      return
+    }
+    
+
+    
+    const scrollListeners = window.scrollListeners
+    const headings = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id]');
+    const activeClass = 'active';
+
+    
+    let activeHeading = headings[0];
+    getLinkByHeading(activeHeading).classList.add(activeClass);
+
+    const onScroll = () => {
+      const passedHeadings = [];
+      for (const h of headings) {
+        
+        if (getOffsetTop(h) < 5) {
+          passedHeadings.push(h)
+        } else {
+          break;
+        }
+      }
+      if (passedHeadings.length > 0) {
+        newActiveHeading = passedHeadings[passedHeadings.length - 1];
+      } else {
+        newActiveHeading = headings[0];
+      }
+      if (activeHeading != newActiveHeading) {
+        getLinkByHeading(activeHeading).classList.remove(activeClass);
+        activeHeading = newActiveHeading;
+        getLinkByHeading(activeHeading).classList.add(activeClass);
+      }
+    }
+
+    let timer = null;
+    const scrollListener = () => {
+      if (timer !== null) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(onScroll, 50)
+    }
+    window.addEventListener('scroll', scrollListener, false);
+    scrollListeners.push(scrollListener)
+
+    function getLinkByHeading(heading) {
+      const id = encodeURI(heading.getAttribute('id')).toLowerCase();
+      return document.querySelector(`.toc ul li a[href="#${id}"]`);
+    }
+
+    function getOffsetTop(heading) {
+      if (!heading.getClientRects().length) {
+        return 0;
+      }
+      let rect = heading.getBoundingClientRect();
+      return rect.top
+    }
+  })();
+  </script>
+
+
+    
+
+</body>
+</html>
