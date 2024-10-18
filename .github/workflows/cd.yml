@@ -72,9 +72,11 @@ jobs:
       - name: Backup
         uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: ykitaaa/tech-blog-back
-          publish_branch: main
+          # deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          # external_repository: ykitaaa/tech-blog-back
+          # publish_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: tech-blog-back
           publish_dir: ./public
 
       - name: Upload artifact
