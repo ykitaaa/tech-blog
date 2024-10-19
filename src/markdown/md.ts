@@ -253,7 +253,8 @@ function htmlVideo(url: string) {
 }
 
 export const pdf = (block: PdfBlockObjectResponse) => {
-  const pdfBlock = block.pdf;
+  const
+   pdfBlock = block.pdf;
   const url =
     pdfBlock.type === "file" ? pdfBlock.file.url : pdfBlock.external.url;
   return `<embed src="${url}" type="application/pdf" style="width: 100%;aspect-ratio: 2/3;height: auto;" />`;

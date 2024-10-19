@@ -3,4 +3,3 @@ dist
 .env
 resources
 .hugo_build.lock
-public

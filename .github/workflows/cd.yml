@@ -70,14 +70,7 @@ jobs:
           hugo
 
       - name: Backup
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          # deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          # external_repository: ykitaaa/tech-blog-back
-          # publish_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: tech-blog-back
-          publish_dir: ./public
+        uses: stefanzweifel/git-auto-commit-action@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
