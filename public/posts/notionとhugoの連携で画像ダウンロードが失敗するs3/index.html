@@ -20,7 +20,7 @@ from &#39;https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4ea
 
 
 上記のURLにアクセスすると。。。有効期限切れのエラーになる。。。
-これはNotionの仕様で1度も表示していないページの画像は3600[秒]（1時間）で切れる">
+これはNotionの仕様で画像の有効期限">
 <meta name="author" content="">
 <link rel="canonical" href="https://struggling-engineer.com/posts/notion%E3%81%A8hugo%E3%81%AE%E9%80%A3%E6%90%BA%E3%81%A7%E7%94%BB%E5%83%8F%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8Bs3/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.7da7716a1f2d0725f74c6ae7f8d6adafc43aabe2b366b65bfbf433448e2a2001.css" integrity="sha256-fadxah8tByX3TGrn&#43;Natr8Q6q&#43;KzZrZb&#43;/QzRI4qIAE=" rel="preload stylesheet" as="style">
@@ -42,7 +42,7 @@ from &#39;https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4ea
 
 
 上記のURLにアクセスすると。。。有効期限切れのエラーになる。。。
-これはNotionの仕様で1度も表示していないページの画像は3600[秒]（1時間）で切れる" />
+これはNotionの仕様で画像の有効期限" />
 <meta property="og:title" content="NotionとHugoの連携で画像ダウンロードが失敗する（S3） | ykitaaa&#39;s tech blog" />
 <meta property="og:description" content="事象
 NotionからHugoでビルドする前のmarkdownにはAWS S3の画像URLが埋め込まれている。
@@ -57,12 +57,12 @@ from &#39;https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4ea
 
 
 上記のURLにアクセスすると。。。有効期限切れのエラーになる。。。
-これはNotionの仕様で1度も表示していないページの画像は3600[秒]（1時間）で切れる" />
+これはNotionの仕様で画像の有効期限" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://struggling-engineer.com/posts/notion%E3%81%A8hugo%E3%81%AE%E9%80%A3%E6%90%BA%E3%81%A7%E7%94%BB%E5%83%8F%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8Bs3/" />
 <meta property="article:section" content="posts" />
   <meta property="article:published_time" content="2024-10-20T15:01:00&#43;00:00" />
-  <meta property="article:modified_time" content="2024-10-20T15:28:00&#43;00:00" />
+  <meta property="article:modified_time" content="2024-10-20T15:42:00&#43;00:00" />
 
 
 <script type="application/ld+json">
@@ -91,14 +91,14 @@ from &#39;https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4ea
   "@type": "BlogPosting",
   "headline": "NotionとHugoの連携で画像ダウンロードが失敗する（S3） | ykitaaa's tech blog",
   "name": "NotionとHugoの連携で画像ダウンロードが失敗する（S3）",
-  "description": "事象 NotionからHugoでビルドする前のmarkdownにはAWS S3の画像URLが埋め込まれている。\n1 2 ERROR Failed to download image failed to fetch remote resource from \u0026#39;https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/4eb616b3-a81c-4ced-877b-fe404e1a6ebe/39423102.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026amp;X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241019%2Fus-west-2%2Fs3%2Faws4_request\u0026amp;X-Amz-Date=20241019T132806Z\u0026amp;X-Amz-Expires=3600\u0026amp;X-Amz-Signature=2e71cbef88fa31c7b72fb36aeb754b494329d1a15a14a8ff7c4e747803c30bcd\u0026amp;X-Amz-SignedHeaders=host\u0026amp;x-id=GetObject\u0026#39;: Forbidden 上記のURLにアクセスすると。。。有効期限切れのエラーになる。。。\nこれはNotionの仕様で1度も表示していないページの画像は3600[秒]（1時間）で切れる\n",
+  "description": "事象 NotionからHugoでビルドする前のmarkdownにはAWS S3の画像URLが埋め込まれている。\n1 2 ERROR Failed to download image failed to fetch remote resource from \u0026#39;https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/4eb616b3-a81c-4ced-877b-fe404e1a6ebe/39423102.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD\u0026amp;X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241019%2Fus-west-2%2Fs3%2Faws4_request\u0026amp;X-Amz-Date=20241019T132806Z\u0026amp;X-Amz-Expires=3600\u0026amp;X-Amz-Signature=2e71cbef88fa31c7b72fb36aeb754b494329d1a15a14a8ff7c4e747803c30bcd\u0026amp;X-Amz-SignedHeaders=host\u0026amp;x-id=GetObject\u0026#39;: Forbidden 上記のURLにアクセスすると。。。有効期限切れのエラーになる。。。\nこれはNotionの仕様で画像の有効期限\n",
   "keywords": [
     
   ],
-  "wordCount" : "268",
+  "wordCount" : "416",
   "inLanguage": "ja",
   "datePublished": "2024-10-20T15:01:00Z",
-  "dateModified": "2024-10-20T15:28:00Z",
+  "dateModified": "2024-10-20T15:42:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://struggling-engineer.com/posts/notion%E3%81%A8hugo%E3%81%AE%E9%80%A3%E6%90%BA%E3%81%A7%E7%94%BB%E5%83%8F%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8Bs3/"
@@ -281,7 +281,11 @@ function toggleThemeListener() {
                 <li>
                     <a href="#%e4%ba%8b%e8%b1%a1" aria-label="事象">事象</a></li>
                 <li>
-                    <a href="#%e5%af%be%e7%ad%96%e6%a1%88" aria-label="対策案">対策案</a></li>
+                    <a href="#%e4%bb%ae%e5%ae%9anotionapi%e3%81%8b%e3%82%89%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89%e3%81%97%e3%81%9f%e3%83%9a%e3%83%bc%e3%82%b8%e6%83%85%e5%a0%b1%e3%81%ae%e7%94%bb%e5%83%8f%e3%81%ae%e6%9c%89%e5%8a%b9%e6%9c%9f%e9%99%90%e3%81%8c%e7%9f%ad%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%a6%e3%81%84%e3%82%8b%e3%83%9a%e3%83%bc%e3%82%b8%e3%81%8c%e6%9b%b4%e6%96%b0%e3%81%95%e3%82%8c%e3%81%aa%e3%81%84%e3%81%a8url%e3%81%af%e6%96%b0%e3%81%97%e3%81%8f%e3%81%aa%e3%82%89%e3%81%aa%e3%81%84" aria-label="仮定：NotionAPIからダウンロードしたページ情報の画像の有効期限が短くなっている→ページが更新されないとURLは新しくならない">仮定：NotionAPIからダウンロードしたページ情報の画像の有効期限が短くなっている→ページが更新されないとURLは新しくならない</a></li>
+                <li>
+                    <a href="#%e5%af%be%e7%ad%96%e6%a1%88aws-s3%e3%81%8b%e3%82%89%e5%8f%96%e5%be%97%e3%81%97%e3%81%9f%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%af%e9%9d%99%e7%9a%84%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a8%e3%81%97%e3%81%a6%e4%bf%9d%e5%ad%98%e3%81%97%e3%81%a6%e3%81%8a%e3%81%8d%e6%97%a2%e5%ad%98%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8c%e3%81%82%e3%82%8b%e5%a0%b4%e5%90%88%e3%81%af%e3%81%9d%e3%81%a1%e3%82%89%e3%81%8b%e3%82%89%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b" aria-label="対策案①：AWS S3から取得したファイルは静的ファイルとして保存しておき、既存ファイルがある場合はそちらからダウンロードする">対策案①：AWS S3から取得したファイルは静的ファイルとして保存しておき、既存ファイルがある場合はそちらからダウンロードする</a></li>
+                <li>
+                    <a href="#%e5%af%be%e5%bf%9c%e6%a1%88" aria-label="対応案②：">対応案②：</a></li>
                 <li>
                     <a href="#%e7%94%a8%e8%aa%9e" aria-label="用語">用語</a></li>
                 <li>
@@ -305,7 +309,7 @@ function toggleThemeListener() {
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>上記のURLにアクセスすると。。。有効期限切れのエラーになる。。。<br>
-これはNotionの仕様で1度も表示していないページの画像は3600[秒]（1時間）で切れる</p>
+これはNotionの仕様で画像の有効期限</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -330,8 +334,10 @@ function toggleThemeListener() {
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/Error&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="対策案">対策案<a hidden class="anchor" aria-hidden="true" href="#対策案">¶</a></h1>
-<p>画像が</p>
+</div><h1 id="仮定notionapiからダウンロードしたページ情報の画像の有効期限が短くなっているページが更新されないとurlは新しくならない">仮定：NotionAPIからダウンロードしたページ情報の画像の有効期限が短くなっている→ページが更新されないとURLは新しくならない<a hidden class="anchor" aria-hidden="true" href="#仮定notionapiからダウンロードしたページ情報の画像の有効期限が短くなっているページが更新されないとurlは新しくならない">¶</a></h1>
+<h1 id="対策案aws-s3から取得したファイルは静的ファイルとして保存しておき既存ファイルがある場合はそちらからダウンロードする">対策案①：AWS S3から取得したファイルは静的ファイルとして保存しておき、既存ファイルがある場合はそちらからダウンロードする<a hidden class="anchor" aria-hidden="true" href="#対策案aws-s3から取得したファイルは静的ファイルとして保存しておき既存ファイルがある場合はそちらからダウンロードする">¶</a></h1>
+<p>画像がAWS S3からダウンロードできる間に静的画像ファイルとしてGitHub内に保存しておく。</p>
+<h1 id="対応案">対応案②：<a hidden class="anchor" aria-hidden="true" href="#対応案">¶</a></h1>
 <h1 id="用語">用語<a hidden class="anchor" aria-hidden="true" href="#用語">¶</a></h1>
 <ul>
 <li>SSG：Static Site Generation 、ビルド時に静的ファイルを生成</li>
