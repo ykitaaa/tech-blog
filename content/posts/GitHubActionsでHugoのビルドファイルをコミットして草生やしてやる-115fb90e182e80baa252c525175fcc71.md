@@ -1,11 +1,11 @@
 ---
 title: "GitHubActionsでHugoのビルドファイルをコミットして草生やしてやる"
 date: "2024-10-04T11:36:00.000Z"
-lastmod: "2024-10-18T13:04:00.000Z"
-draft: true
-hidden: true
+lastmod: "2024-10-20T14:53:00.000Z"
+draft: false
+hidden: false
 series: []
-nositemap: true
+nositemap: false
 authors:
   - "YutaKita"
 tags:
@@ -17,7 +17,7 @@ NOTION_METADATA:
   object: "page"
   id: "115fb90e-182e-80ba-a252-c525175fcc71"
   created_time: "2024-10-04T11:36:00.000Z"
-  last_edited_time: "2024-10-18T13:04:00.000Z"
+  last_edited_time: "2024-10-20T14:53:00.000Z"
   created_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
@@ -35,7 +35,7 @@ NOTION_METADATA:
     hidden:
       id: "%40%3Bf%3D"
       type: "checkbox"
-      checkbox: true
+      checkbox: false
     series:
       id: "B%3C%3FS"
       type: "multi_select"
@@ -43,11 +43,11 @@ NOTION_METADATA:
     draft:
       id: "JiWU"
       type: "checkbox"
-      checkbox: true
+      checkbox: false
     nositemap:
       id: "JuyN"
       type: "checkbox"
-      checkbox: true
+      checkbox: false
     authors:
       id: "bK%3B%5B"
       type: "people"
@@ -103,8 +103,8 @@ NOTION_METADATA:
           href: null
   url: "https://www.notion.so/GitHubActions-Hugo-115fb90e182e80baa252c525175fcc71"
   public_url: null
-UPDATE_TIME: "2024-10-19T13:27:33.634Z"
-EXPIRY_TIME: "2024-10-19T14:27:29.742Z"
+UPDATE_TIME: "2024-10-20T15:37:48.082Z"
+EXPIRY_TIME: "2024-10-20T16:37:44.645Z"
 
 ---
 
@@ -136,13 +136,7 @@ GitHubの草が生えない。。。
 # STEP1. GitHubに自動コミットする
 
 
-## 1. GitHubActionsでデプロイ用アクセスキーを発行する
-
-
-★記載中→mainブランチでないと草生えない問題があったので対応中
-
-
-## 2. GitHubActionsのワークフロー設定
+## 1. GitHubActionsのワークフロー設定
 
 
 GitHubActionsのワークフローファイルで、  
@@ -156,15 +150,11 @@ Hugoのビルドが終わった後の処理に以下を追加する。
 
 ```yaml
       - name: Backup
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: コミット先のブランチ名
-          publish_dir: ./public
+        uses: stefanzweifel/git-auto-commit-action@v5
 ```
 
 
- publish_dir：Hugoでビルドしたファイルの配置先を指定
+※ 注意：mainブランチにコミットしないと草生えないです
 
 
 # STEP2. draft状態のブログ記事を隠す
@@ -199,7 +189,7 @@ Notionで新規記事を作る際に上記の設定がデフォルトになる�
 図3. Notion側のプロパティ（隠す場合）
 
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/f121ac3a-8e1a-481d-ad76-edede8c699cb/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241019%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241019T132729Z&X-Amz-Expires=3600&X-Amz-Signature=f5685a0f7b5f6551ffdb2df3ab859b7671be4329a6edd63929d51837d710d40b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/aa01cf7d-0124-4d08-bc9a-6c1b2535756e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241020%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241020T153744Z&X-Amz-Expires=3600&X-Amz-Signature=b0a22900fd070050fc2cae476a24a0446014e2d018eeb964ab81fe8c7469be38&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 # 参考URL

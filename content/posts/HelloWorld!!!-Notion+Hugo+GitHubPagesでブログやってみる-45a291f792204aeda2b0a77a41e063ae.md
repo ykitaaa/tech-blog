@@ -1,15 +1,8 @@
 ---
 title: "HelloWorld!!! Notion+Hugo+GitHubPagesでブログやってみる"
 date: "2024-09-22T11:13:00.000Z"
-lastmod: "2024-10-18T12:20:00.000Z"
+lastmod: "2024-10-20T15:15:00.000Z"
 draft: false
-featuredImage: "https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7\
-  a84-4eae-9d05-fda3364b0d6d/373cf075-c5f9-4cc8-ad1a-e0ca3e91fda3/Hello_World_I\
-  mage_converted_final.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha2\
-  56=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241019%2Fus-wes\
-  t-2%2Fs3%2Faws4_request&X-Amz-Date=20241019T132744Z&X-Amz-Expires=3600&X-Amz-\
-  Signature=1f4892765287b83f56ffffd80d05e86bdbc369960f5c7b562e3fc1926524effd&X-\
-  Amz-SignedHeaders=host&x-id=GetObject"
 hidden: false
 series: []
 nositemap: false
@@ -25,24 +18,14 @@ NOTION_METADATA:
   object: "page"
   id: "45a291f7-9220-4aed-a2b0-a77a41e063ae"
   created_time: "2024-09-22T11:13:00.000Z"
-  last_edited_time: "2024-10-18T12:20:00.000Z"
+  last_edited_time: "2024-10-20T15:15:00.000Z"
   created_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
   last_edited_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
-  cover:
-    type: "file"
-    file:
-      url: "https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9\
-        d05-fda3364b0d6d/373cf075-c5f9-4cc8-ad1a-e0ca3e91fda3/Hello_World_Image\
-        _converted_final.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sh\
-        a256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241019%\
-        2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241019T132714Z&X-Amz-Expir\
-        es=3600&X-Amz-Signature=d4aa582bf011a658fe05919530ee2cfdfee5b280bacebbd\
-        45301d66b2541f422&X-Amz-SignedHeaders=host&x-id=GetObject"
-      expiry_time: "2024-10-19T14:27:14.122Z"
+  cover: null
   icon: null
   parent:
     type: "database_id"
@@ -135,8 +118,7 @@ NOTION_METADATA:
   url: "https://www.notion.so/HelloWorld-Notion-Hugo-GitHubPages-45a291f792204aed\
     a2b0a77a41e063ae"
   public_url: null
-UPDATE_TIME: "2024-10-19T13:27:46.944Z"
-EXPIRY_TIME: "2024-10-19T14:27:44.463Z"
+UPDATE_TIME: "2024-10-20T15:37:59.263Z"
 
 ---
 
