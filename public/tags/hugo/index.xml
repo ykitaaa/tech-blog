@@ -8,6 +8,92 @@
     <language>ja</language>
     <lastBuildDate>Fri, 04 Oct 2024 11:36:00 +0000</lastBuildDate><atom:link href="https://struggling-engineer.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>GitHubActionsでHugoのビルドファイルをコミットして草生やしてやる</title>
+      <link>https://struggling-engineer.com/posts/githubactions%E3%81%A7hugo%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%81%97%E3%81%A6%E8%8D%89%E7%94%9F%E3%82%84%E3%81%97%E3%81%A6%E3%82%84%E3%82%8B/</link>
+      <pubDate>Fri, 04 Oct 2024 11:36:00 +0000</pubDate>
+      
+      <guid>https://struggling-engineer.com/posts/githubactions%E3%81%A7hugo%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%81%97%E3%81%A6%E8%8D%89%E7%94%9F%E3%82%84%E3%81%97%E3%81%A6%E3%82%84%E3%82%8B/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+&lt;h2 id=&#34;どんな人向け&#34;&gt;どんな人向け？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人
+　⇒&lt;a href=&#34;https://struggling-engineer.com/posts/helloworld-notion-hugo-githubpages%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%84%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b&#34;&gt;記事&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;問題&#34;&gt;問題&lt;/h2&gt;
+&lt;p&gt;Notionでブログ記事を書いているとGitHubにコミットするわけではないので、&lt;br&gt;
+GitHubの草が生えない。。。&lt;br&gt;
+けど、Notionだとブログ記事を書きやすいから引き続き使いたい。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="はじめに">はじめに</h1>
+<h2 id="どんな人向け">どんな人向け？</h2>
+<ul>
+<li>Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人
+　⇒<a href="/posts/helloworld-notion-hugo-githubpages%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%84%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b">記事</a></li>
+</ul>
+<h2 id="問題">問題</h2>
+<p>Notionでブログ記事を書いているとGitHubにコミットするわけではないので、<br>
+GitHubの草が生えない。。。<br>
+けど、Notionだとブログ記事を書きやすいから引き続き使いたい。</p>
+<h2 id="解決案">解決案</h2>
+<ul>
+<li>ビルドしたブログ記事をGItHubAction中でGitHubにコミット</li>
+<li>コミット対象のブログ記事にはdraft状態（下書き状態）も含む<br>
+→ モチベーション維持のため、下書きでもコミットしてGitHubの草生やしたい笑</li>
+<li>ただし、draft状態のブログ記事は非公開にしたい
+→ Hugoのデフォルトだとdraft状態でも公開されてしまう</li>
+</ul>
+<h1 id="step1-githubに自動コミットする">STEP1. GitHubに自動コミットする</h1>
+<h2 id="1-githubactionsのワークフロー設定">1. GitHubActionsのワークフロー設定</h2>
+<p>GitHubActionsのワークフローファイルで、<br>
+Hugoのビルドが終わった後の処理に以下を追加する。<br>
+本ブログ記事の設定は以下設定ファイルを参考にしてください。
+<a href="https://github.com/ykitaaa/tech-blog/blob/main/.github/workflows/cd.yml" rel="external">https://github.com/ykitaaa/tech-blog/blob/main/.github/workflows/cd.yml</a></p>
+<p>図1. ワークフローのyml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Backup</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">stefanzweifel/git-auto-commit-action@v5</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>※ 注意：mainブランチにコミットしないと草生えないです</p>
+<h1 id="step2-draft状態のブログ記事を隠す">STEP2. draft状態のブログ記事を隠す</h1>
+<p>プログ記事（posts）のMarkdownに以下設定の追加。<br>
+たいていは、どのテーマであっても以下設定でRSSやsitemapからも隠せるので簡単にできます。</p>
+<p>図2. ブログ記事のMarkdown設定</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">hidden</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">nositemap</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>draft：ドラフト状態<br>
+hidden：記事を隠す（一覧に出ないだけなので、直接遷移は可能）<br>
+nositemap：sitemap.xmlから除外する（検索エンジンからの検索対策）</p>
+<p>Notionのページでhiddenプロパティを追加することで設定できています。<br>
+Notionで新規記事を作る際に上記の設定がデフォルトになるように設定しておけばよいかと思います。</p>
+<p>図3. Notion側のプロパティ（隠す場合）</p>
+<p>
+
+  
+    <img src="/image_5029564158149057977.png" width="812" height="365"style="width: auto;height: auto;">
+  
+
+</p>
+<h1 id="参考url">参考URL</h1>
+<p><a href="https://zwbetz.com/discreet-drafts-in-hugo/" rel="external">https://zwbetz.com/discreet-drafts-in-hugo/</a></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>Hugoの要約がめちゃくちゃ長くなる件</title>
       <link>https://struggling-engineer.com/posts/hugo%E3%81%AE%E8%A6%81%E7%B4%84%E3%81%8C%E3%82%81%E3%81%A1%E3%82%83%E3%81%8F%E3%81%A1%E3%82%83%E9%95%B7%E3%81%8F%E3%81%AA%E3%82%8B%E4%BB%B6/</link>
       <pubDate>Fri, 04 Oct 2024 11:24:00 +0000</pubDate>

@@ -1,9 +1,9 @@
 ---
 title: "GitHubActionsでHugoのビルドファイルをコミットして草生やしてやる"
 date: "2024-10-04T11:36:00.000Z"
-lastmod: "2024-10-21T09:19:00.000Z"
-draft: true
-hidden: true
+lastmod: "2024-10-21T11:33:00.000Z"
+draft: false
+hidden: false
 series: []
 nositemap: false
 authors:
@@ -17,7 +17,7 @@ NOTION_METADATA:
   object: "page"
   id: "115fb90e-182e-80ba-a252-c525175fcc71"
   created_time: "2024-10-04T11:36:00.000Z"
-  last_edited_time: "2024-10-21T09:19:00.000Z"
+  last_edited_time: "2024-10-21T11:33:00.000Z"
   created_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
@@ -35,7 +35,7 @@ NOTION_METADATA:
     hidden:
       id: "%40%3Bf%3D"
       type: "checkbox"
-      checkbox: true
+      checkbox: false
     series:
       id: "B%3C%3FS"
       type: "multi_select"
@@ -43,7 +43,7 @@ NOTION_METADATA:
     draft:
       id: "JiWU"
       type: "checkbox"
-      checkbox: true
+      checkbox: false
     nositemap:
       id: "JuyN"
       type: "checkbox"
@@ -103,8 +103,8 @@ NOTION_METADATA:
           href: null
   url: "https://www.notion.so/GitHubActions-Hugo-115fb90e182e80baa252c525175fcc71"
   public_url: null
-UPDATE_TIME: "2024-10-21T09:58:51.378Z"
-EXPIRY_TIME: "2024-10-21T10:58:45.271Z"
+UPDATE_TIME: "2024-10-21T21:18:54.035Z"
+EXPIRY_TIME: "2024-10-21T22:18:47.998Z"
 
 ---
 
@@ -189,7 +189,7 @@ Notionで新規記事を作る際に上記の設定がデフォルトになる�
 図3. Notion側のプロパティ（隠す場合）
 
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/aa01cf7d-0124-4d08-bc9a-6c1b2535756e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241021%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241021T095845Z&X-Amz-Expires=3600&X-Amz-Signature=7ceba93a0be6f255d7440df3fd08cdc50c81205348df12623b47002ee60a1716&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/aa01cf7d-0124-4d08-bc9a-6c1b2535756e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241021%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241021T211848Z&X-Amz-Expires=3600&X-Amz-Signature=bcba1c14ae2b650e681ddef4130d5235e041a357e4ff464485b3425586b88d4f&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 # 参考URL
