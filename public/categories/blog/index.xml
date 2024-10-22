@@ -16,7 +16,7 @@
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
 &lt;h2 id=&#34;どんな人向け&#34;&gt;どんな人向け？&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人
+&lt;li&gt;Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人&lt;br&gt;
 　⇒&lt;a href=&#34;https://struggling-engineer.com/posts/helloworld-notion-hugo-githubpages%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%84%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b&#34;&gt;記事&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;問題&#34;&gt;問題&lt;/h2&gt;
@@ -26,7 +26,7 @@ GitHubの草が生えない。。。&lt;br&gt;
       <content:encoded><![CDATA[<h1 id="はじめに">はじめに</h1>
 <h2 id="どんな人向け">どんな人向け？</h2>
 <ul>
-<li>Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人
+<li>Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人<br>
 　⇒<a href="/posts/helloworld-notion-hugo-githubpages%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%84%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b">記事</a></li>
 </ul>
 <h2 id="問題">問題</h2>
@@ -59,10 +59,26 @@ Hugoのビルドが終わった後の処理に以下を追加する。<br>
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>※ 注意：mainブランチにコミットしないと草生えないです</p>
-<h1 id="step2-draft状態のブログ記事を隠す">STEP2. draft状態のブログ記事を隠す</h1>
+<h2 id="2-コミット対象から画像ファイルを除外する">2. コミット対象から画像ファイルを除外する</h2>
+<p>Notionから取得した画像のURLがAWS S3になっていて、<br>
+毎回違うファイル名で取得される（？）ようなので、  とりあえず画像ファイルを除外する。<br>
+以下の例はpublic配下のjpgおよびpngを除外する設定。<br>
+試していないが、他のファイルも同じと思われる。</p>
+<p>図2. .gitignore</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"> public/*.jpg
+</span></span><span class="line"><span class="cl"> public/*.png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="step2-draft状態のブログ記事を隠す">STEP2. draft状態のブログ記事を隠す</h1>
 <p>プログ記事（posts）のMarkdownに以下設定の追加。<br>
-たいていは、どのテーマであっても以下設定でRSSやsitemapからも隠せるので簡単にできます。</p>
-<p>図2. ブログ記事のMarkdown設定</p>
+たいていは、どのテーマであっても以下設定でRSSやsitemapからも隠せるので簡単にできる。</p>
+<p>図3. ブログ記事のMarkdown設定</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -78,13 +94,13 @@ Hugoのビルドが終わった後の処理に以下を追加する。<br>
 </div><p>draft：ドラフト状態<br>
 hidden：記事を隠す（一覧に出ないだけなので、直接遷移は可能）<br>
 nositemap：sitemap.xmlから除外する（検索エンジンからの検索対策）</p>
-<p>Notionのページでhiddenプロパティを追加することで設定できています。<br>
-Notionで新規記事を作る際に上記の設定がデフォルトになるように設定しておけばよいかと思います。</p>
-<p>図3. Notion側のプロパティ（隠す場合）</p>
+<p>Notionのページでhiddenプロパティを追加することで設定できる。<br>
+Notionで新規記事を作る際に上記の設定がデフォルトになるように設定しておけば使いやすい。</p>
+<p>図4. Notion側のプロパティ（隠す場合）</p>
 <p>
 
   
-    <img src="/image_13414331011772764793.png" width="812" height="365"style="width: auto;height: auto;">
+    <img src="/image_8551623717065388955.png" width="812" height="365"style="width: auto;height: auto;">
   
 
 </p>

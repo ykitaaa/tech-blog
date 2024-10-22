@@ -50,7 +50,7 @@ GitHubの草が生えない。。。
 <meta property="og:url" content="https://struggling-engineer.com/posts/githubactions%E3%81%A7hugo%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%81%97%E3%81%A6%E8%8D%89%E7%94%9F%E3%82%84%E3%81%97%E3%81%A6%E3%82%84%E3%82%8B/" />
 <meta property="article:section" content="posts" />
   <meta property="article:published_time" content="2024-10-04T11:36:00&#43;00:00" />
-  <meta property="article:modified_time" content="2024-10-21T09:19:00&#43;00:00" />
+  <meta property="article:modified_time" content="2024-10-22T15:13:00&#43;00:00" />
 
 
 <script type="application/ld+json">
@@ -79,14 +79,14 @@ GitHubの草が生えない。。。
   "@type": "BlogPosting",
   "headline": "GitHubActionsでHugoのビルドファイルをコミットして草生やしてやる | ykitaaa's tech blog",
   "name": "GitHubActionsでHugoのビルドファイルをコミットして草生やしてやる",
-  "description": "はじめに どんな人向け？ Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人 ⇒記事 問題 Notionでブログ記事を書いているとGitHubにコミットするわけではないので、\nGitHubの草が生えない。。。\nけど、Notionだとブログ記事を書きやすいから引き続き使いたい。\n",
+  "description": "はじめに どんな人向け？ Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人\n⇒記事 問題 Notionでブログ記事を書いているとGitHubにコミットするわけではないので、\nGitHubの草が生えない。。。\nけど、Notionだとブログ記事を書きやすいから引き続き使いたい。\n",
   "keywords": [
     "Hugo", "GitHubActions"
   ],
-  "wordCount" : "812",
+  "wordCount" : "959",
   "inLanguage": "ja",
   "datePublished": "2024-10-04T11:36:00Z",
-  "dateModified": "2024-10-21T09:19:00Z",
+  "dateModified": "2024-10-22T15:13:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://struggling-engineer.com/posts/githubactions%E3%81%A7hugo%E3%81%AE%E3%83%93%E3%83%AB%E3%83%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%81%97%E3%81%A6%E8%8D%89%E7%94%9F%E3%82%84%E3%81%97%E3%81%A6%E3%82%84%E3%82%8B/"
@@ -282,7 +282,9 @@ function toggleThemeListener() {
                     <a href="#step1-github%e3%81%ab%e8%87%aa%e5%8b%95%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e3%81%99%e3%82%8b" aria-label="STEP1. GitHubに自動コミットする">STEP1. GitHubに自動コミットする</a><ul>
                         
                 <li>
-                    <a href="#1-githubactions%e3%81%ae%e3%83%af%e3%83%bc%e3%82%af%e3%83%95%e3%83%ad%e3%83%bc%e8%a8%ad%e5%ae%9a" aria-label="1. GitHubActionsのワークフロー設定">1. GitHubActionsのワークフロー設定</a></li></ul>
+                    <a href="#1-githubactions%e3%81%ae%e3%83%af%e3%83%bc%e3%82%af%e3%83%95%e3%83%ad%e3%83%bc%e8%a8%ad%e5%ae%9a" aria-label="1. GitHubActionsのワークフロー設定">1. GitHubActionsのワークフロー設定</a></li>
+                <li>
+                    <a href="#2-%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e5%af%be%e8%b1%a1%e3%81%8b%e3%82%89%e7%94%bb%e5%83%8f%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e9%99%a4%e5%a4%96%e3%81%99%e3%82%8b" aria-label="2. コミット対象から画像ファイルを除外する">2. コミット対象から画像ファイルを除外する</a></li></ul>
                 </li>
                 <li>
                     <a href="#step2-draft%e7%8a%b6%e6%85%8b%e3%81%ae%e3%83%96%e3%83%ad%e3%82%b0%e8%a8%98%e4%ba%8b%e3%82%92%e9%9a%a0%e3%81%99" aria-label="STEP2. draft状態のブログ記事を隠す">STEP2. draft状態のブログ記事を隠す</a></li>
@@ -297,7 +299,7 @@ function toggleThemeListener() {
   <div class="post-content"><h1 id="はじめに">はじめに<a hidden class="anchor" aria-hidden="true" href="#はじめに">¶</a></h1>
 <h2 id="どんな人向け">どんな人向け？<a hidden class="anchor" aria-hidden="true" href="#どんな人向け">¶</a></h2>
 <ul>
-<li>Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人
+<li>Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人<br>
 　⇒<a href="/posts/helloworld-notion-hugo-githubpages%e3%81%a7%e3%83%96%e3%83%ad%e3%82%b0%e3%82%84%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%8b">記事</a></li>
 </ul>
 <h2 id="問題">問題<a hidden class="anchor" aria-hidden="true" href="#問題">¶</a></h2>
@@ -330,10 +332,26 @@ Hugoのビルドが終わった後の処理に以下を追加する。<br>
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>※ 注意：mainブランチにコミットしないと草生えないです</p>
-<h1 id="step2-draft状態のブログ記事を隠す">STEP2. draft状態のブログ記事を隠す<a hidden class="anchor" aria-hidden="true" href="#step2-draft状態のブログ記事を隠す">¶</a></h1>
+<h2 id="2-コミット対象から画像ファイルを除外する">2. コミット対象から画像ファイルを除外する<a hidden class="anchor" aria-hidden="true" href="#2-コミット対象から画像ファイルを除外する">¶</a></h2>
+<p>Notionから取得した画像のURLがAWS S3になっていて、<br>
+毎回違うファイル名で取得される（？）ようなので、  とりあえず画像ファイルを除外する。<br>
+以下の例はpublic配下のjpgおよびpngを除外する設定。<br>
+試していないが、他のファイルも同じと思われる。</p>
+<p>図2. .gitignore</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"> public/*.jpg
+</span></span><span class="line"><span class="cl"> public/*.png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="step2-draft状態のブログ記事を隠す">STEP2. draft状態のブログ記事を隠す<a hidden class="anchor" aria-hidden="true" href="#step2-draft状態のブログ記事を隠す">¶</a></h1>
 <p>プログ記事（posts）のMarkdownに以下設定の追加。<br>
-たいていは、どのテーマであっても以下設定でRSSやsitemapからも隠せるので簡単にできます。</p>
-<p>図2. ブログ記事のMarkdown設定</p>
+たいていは、どのテーマであっても以下設定でRSSやsitemapからも隠せるので簡単にできる。</p>
+<p>図3. ブログ記事のMarkdown設定</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -349,13 +367,13 @@ Hugoのビルドが終わった後の処理に以下を追加する。<br>
 </div><p>draft：ドラフト状態<br>
 hidden：記事を隠す（一覧に出ないだけなので、直接遷移は可能）<br>
 nositemap：sitemap.xmlから除外する（検索エンジンからの検索対策）</p>
-<p>Notionのページでhiddenプロパティを追加することで設定できています。<br>
-Notionで新規記事を作る際に上記の設定がデフォルトになるように設定しておけばよいかと思います。</p>
-<p>図3. Notion側のプロパティ（隠す場合）</p>
+<p>Notionのページでhiddenプロパティを追加することで設定できる。<br>
+Notionで新規記事を作る際に上記の設定がデフォルトになるように設定しておけば使いやすい。</p>
+<p>図4. Notion側のプロパティ（隠す場合）</p>
 <p>
 
   
-    <img src="/image_13414331011772764793.png" width="812" height="365"style="width: auto;height: auto;">
+    <img src="/image_8551623717065388955.png" width="812" height="365"style="width: auto;height: auto;">
   
 
 </p>

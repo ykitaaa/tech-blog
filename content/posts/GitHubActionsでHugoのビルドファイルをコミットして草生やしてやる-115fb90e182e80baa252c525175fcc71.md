@@ -1,7 +1,7 @@
 ---
 title: "GitHubActionsでHugoのビルドファイルをコミットして草生やしてやる"
 date: "2024-10-04T11:36:00.000Z"
-lastmod: "2024-10-21T09:19:00.000Z"
+lastmod: "2024-10-22T15:13:00.000Z"
 draft: false
 hidden: false
 series: []
@@ -17,7 +17,7 @@ NOTION_METADATA:
   object: "page"
   id: "115fb90e-182e-80ba-a252-c525175fcc71"
   created_time: "2024-10-04T11:36:00.000Z"
-  last_edited_time: "2024-10-21T09:19:00.000Z"
+  last_edited_time: "2024-10-22T15:13:00.000Z"
   created_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
@@ -103,8 +103,8 @@ NOTION_METADATA:
           href: null
   url: "https://www.notion.so/GitHubActions-Hugo-115fb90e182e80baa252c525175fcc71"
   public_url: null
-UPDATE_TIME: "2024-10-22T11:13:53.934Z"
-EXPIRY_TIME: "2024-10-22T12:13:51.024Z"
+UPDATE_TIME: "2024-10-22T21:18:44.093Z"
+EXPIRY_TIME: "2024-10-22T22:18:41.256Z"
 
 ---
 
@@ -114,7 +114,7 @@ EXPIRY_TIME: "2024-10-22T12:13:51.024Z"
 
 ## どんな人向け？
 
-- Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人
+- Notionでブログ記事を書いて、GitHubActionからHugoを使ってビルドしている人  
 　⇒[記事](/posts/helloworld-notion-hugo-githubpagesでブログやってみる)
 
 ## 問題
@@ -154,18 +154,36 @@ Hugoのビルドが終わった後の処理に以下を追加する。
 ```
 
 
-※ 注意：mainブランチにコミットしないと草生えないです
+※ 注意：mainブランチにコミットしないと草生えないです  
+
+
+## 2. コミット対象から画像ファイルを除外する
+
+
+Notionから取得した画像のURLがAWS S3になっていて、  
+毎回違うファイル名で取得される（？）ようなので、  とりあえず画像ファイルを除外する。  
+以下の例はpublic配下のjpgおよびpngを除外する設定。  
+試していないが、他のファイルも同じと思われる。  
+
+
+図2. .gitignore
+
+
+```xml
+ public/*.jpg
+ public/*.png
+```
 
 
 # STEP2. draft状態のブログ記事を隠す
 
 
 プログ記事（posts）のMarkdownに以下設定の追加。  
-たいていは、どのテーマであっても以下設定でRSSやsitemapからも隠せるので簡単にできます。  
+たいていは、どのテーマであっても以下設定でRSSやsitemapからも隠せるので簡単にできる。  
 
 
   
-図2. ブログ記事のMarkdown設定
+図3. ブログ記事のMarkdown設定
 
 
 ```yaml
@@ -181,15 +199,15 @@ nositemap：sitemap.xmlから除外する（検索エンジンからの検索対
 
 
   
-Notionのページでhiddenプロパティを追加することで設定できています。  
-Notionで新規記事を作る際に上記の設定がデフォルトになるように設定しておけばよいかと思います。  
+Notionのページでhiddenプロパティを追加することで設定できる。  
+Notionで新規記事を作る際に上記の設定がデフォルトになるように設定しておけば使いやすい。  
 
 
-  
-図3. Notion側のプロパティ（隠す場合）
+   
+図4. Notion側のプロパティ（隠す場合）
 
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/aa01cf7d-0124-4d08-bc9a-6c1b2535756e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241022T111351Z&X-Amz-Expires=3600&X-Amz-Signature=a24efb99814a1113d603e146a5abc3ef16e27650a780c40eea8fe6873a66448d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/aa01cf7d-0124-4d08-bc9a-6c1b2535756e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20241022%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241022T211841Z&X-Amz-Expires=3600&X-Amz-Signature=6a035544337e484fd35644f432f79410e38ebf69130b2b0cbef337f987f4381b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 # 参考URL
