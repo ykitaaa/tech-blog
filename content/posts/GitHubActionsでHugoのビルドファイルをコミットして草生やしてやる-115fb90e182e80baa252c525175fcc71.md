@@ -103,8 +103,8 @@ NOTION_METADATA:
           href: null
   url: "https://www.notion.so/GitHubActions-Hugo-115fb90e182e80baa252c525175fcc71"
   public_url: null
-UPDATE_TIME: "2024-10-24T21:19:31.585Z"
-EXPIRY_TIME: "2024-10-24T22:19:25.561Z"
+UPDATE_TIME: "2024-10-25T09:21:35.546Z"
+EXPIRY_TIME: "2024-10-25T10:21:30.407Z"
 
 ---
 
@@ -207,7 +207,7 @@ Notionで新規記事を作る際に上記の設定がデフォルトになる�
 図4. Notion側のプロパティ（隠す場合）
 
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/aa01cf7d-0124-4d08-bc9a-6c1b2535756e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241024%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241024T211925Z&X-Amz-Expires=3600&X-Amz-Signature=35fa3f120374c13ae12c6e8e2c5238ae23b742472af073db4d2016b343279694&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/aa01cf7d-0124-4d08-bc9a-6c1b2535756e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241025%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241025T092130Z&X-Amz-Expires=3600&X-Amz-Signature=5d5848ffca74be9932855174a55669eac18b9fe6d570ef129a3afbee30b1683b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 # 参考URL
