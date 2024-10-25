@@ -1,7 +1,7 @@
 ---
 title: "GitHubActionsでHugoのビルドファイルをコミットして草生やしてやる"
 date: "2024-10-04T11:36:00.000Z"
-lastmod: "2024-10-22T15:13:00.000Z"
+lastmod: "2024-10-25T12:08:00.000Z"
 draft: false
 hidden: false
 series: []
@@ -17,7 +17,7 @@ NOTION_METADATA:
   object: "page"
   id: "115fb90e-182e-80ba-a252-c525175fcc71"
   created_time: "2024-10-04T11:36:00.000Z"
-  last_edited_time: "2024-10-22T15:13:00.000Z"
+  last_edited_time: "2024-10-25T12:08:00.000Z"
   created_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
@@ -103,8 +103,7 @@ NOTION_METADATA:
           href: null
   url: "https://www.notion.so/GitHubActions-Hugo-115fb90e182e80baa252c525175fcc71"
   public_url: null
-UPDATE_TIME: "2024-10-25T09:21:35.546Z"
-EXPIRY_TIME: "2024-10-25T10:21:30.407Z"
+UPDATE_TIME: "2024-10-25T12:08:16.918Z"
 
 ---
 
@@ -205,9 +204,6 @@ Notionで新規記事を作る際に上記の設定がデフォルトになる�
 
    
 図4. Notion側のプロパティ（隠す場合）
-
-
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/8763eeab-7a84-4eae-9d05-fda3364b0d6d/aa01cf7d-0124-4d08-bc9a-6c1b2535756e/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241025%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241025T092130Z&X-Amz-Expires=3600&X-Amz-Signature=5d5848ffca74be9932855174a55669eac18b9fe6d570ef129a3afbee30b1683b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 # 参考URL

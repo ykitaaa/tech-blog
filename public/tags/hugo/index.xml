@@ -97,13 +97,6 @@ nositemap：sitemap.xmlから除外する（検索エンジンからの検索対
 <p>Notionのページでhiddenプロパティを追加することで設定できる。<br>
 Notionで新規記事を作る際に上記の設定がデフォルトになるように設定しておけば使いやすい。</p>
 <p>図4. Notion側のプロパティ（隠す場合）</p>
-<p>
-
-  
-    <img src="/image_9907660469589555832.png" width="812" height="365"style="width: auto;height: auto;">
-  
-
-</p>
 <h1 id="参考url">参考URL</h1>
 <p><a href="https://zwbetz.com/discreet-drafts-in-hugo/" rel="external">https://zwbetz.com/discreet-drafts-in-hugo/</a></p>
 ]]></content:encoded>
