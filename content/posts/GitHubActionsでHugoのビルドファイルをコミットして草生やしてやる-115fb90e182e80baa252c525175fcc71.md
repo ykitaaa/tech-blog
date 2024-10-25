@@ -1,7 +1,7 @@
 ---
 title: "GitHubActionsでHugoのビルドファイルをコミットして草生やしてやる"
 date: "2024-10-04T11:36:00.000Z"
-lastmod: "2024-10-25T12:08:00.000Z"
+lastmod: "2024-10-25T12:09:00.000Z"
 draft: false
 hidden: false
 series: []
@@ -17,7 +17,7 @@ NOTION_METADATA:
   object: "page"
   id: "115fb90e-182e-80ba-a252-c525175fcc71"
   created_time: "2024-10-04T11:36:00.000Z"
-  last_edited_time: "2024-10-25T12:08:00.000Z"
+  last_edited_time: "2024-10-25T12:09:00.000Z"
   created_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
@@ -103,7 +103,7 @@ NOTION_METADATA:
           href: null
   url: "https://www.notion.so/GitHubActions-Hugo-115fb90e182e80baa252c525175fcc71"
   public_url: null
-UPDATE_TIME: "2024-10-25T12:08:16.918Z"
+UPDATE_TIME: "2024-10-25T21:19:38.063Z"
 
 ---
 
@@ -204,6 +204,9 @@ Notionで新規記事を作る際に上記の設定がデフォルトになる�
 
    
 図4. Notion側のプロパティ（隠す場合）
+
+
+![](https://struggling-engineer.com/posts/githubactionsでhugoのビルドファイルをコミットして草生やしてやる/image.png)
 
 
 # 参考URL
