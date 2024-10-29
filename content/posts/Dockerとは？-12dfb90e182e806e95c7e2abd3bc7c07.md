@@ -1,7 +1,7 @@
 ---
 title: "Dockerとは？"
 date: "2024-10-28T10:52:00.000Z"
-lastmod: "2024-10-28T11:20:00.000Z"
+lastmod: "2024-10-29T02:15:00.000Z"
 draft: true
 hidden: true
 series: []
@@ -14,7 +14,7 @@ NOTION_METADATA:
   object: "page"
   id: "12dfb90e-182e-806e-95c7-e2abd3bc7c07"
   created_time: "2024-10-28T10:52:00.000Z"
-  last_edited_time: "2024-10-28T11:20:00.000Z"
+  last_edited_time: "2024-10-29T02:15:00.000Z"
   created_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
@@ -91,7 +91,7 @@ NOTION_METADATA:
           href: null
   url: "https://www.notion.so/Docker-12dfb90e182e806e95c7e2abd3bc7c07"
   public_url: null
-UPDATE_TIME: "2024-10-28T21:19:07.534Z"
+UPDATE_TIME: "2024-10-29T09:22:03.710Z"
 
 ---
 
@@ -145,6 +145,41 @@ sequenceDiagram
 
 # Dockerの設定ファイル
 
+
+基本形を並べてみる
+
+
+```Dockerfile
+```
+
+
+# Dockerの実行
+
+- 起動中のコンテナ  
+```bash
+docker ps
+```
+- 起動  
+新しいコンテナIDでコンテナを起動する  
+```bash
+# 通常起動
+docker run -it [任意のコンテナID] 
+# VOLUMEを紐づけてスタート
+docker run -v ローカルディレクトリ:コンテナディレクトリ -it [コンテナID] 
+```  
+-i：インタラクティブモード＝標準入力が有効
+-t：疑似TTY（Teletypewriterの疑似端末[電気信号で遠隔地との文字のやりとりをする]）を割り当てる
+- 起動しているコンテナに対してコマンド実行
+```bash
+docker exec -it [コンテナID] [コマンド]
+```
+- 常時起動
+
+# 派生
+
+- Kubernetes  
+コンテナ群の管理→スケーラビリティの確保
+- Podman
 
 # 参考
 
