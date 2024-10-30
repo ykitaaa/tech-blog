@@ -1,7 +1,7 @@
 ---
 title: "Dockerとは？"
 date: "2024-10-28T10:52:00.000Z"
-lastmod: "2024-10-29T02:15:00.000Z"
+lastmod: "2024-10-30T10:58:00.000Z"
 draft: true
 hidden: true
 series: []
@@ -14,7 +14,7 @@ NOTION_METADATA:
   object: "page"
   id: "12dfb90e-182e-806e-95c7-e2abd3bc7c07"
   created_time: "2024-10-28T10:52:00.000Z"
-  last_edited_time: "2024-10-29T02:15:00.000Z"
+  last_edited_time: "2024-10-30T10:58:00.000Z"
   created_by:
     object: "user"
     id: "11d54c62-5c86-4d27-a64b-4fdfb07609d7"
@@ -91,7 +91,7 @@ NOTION_METADATA:
           href: null
   url: "https://www.notion.so/Docker-12dfb90e182e806e95c7e2abd3bc7c07"
   public_url: null
-UPDATE_TIME: "2024-10-29T09:22:03.710Z"
+UPDATE_TIME: "2024-10-30T21:19:07.651Z"
 
 ---
 
@@ -150,6 +150,14 @@ sequenceDiagram
 
 
 ```Dockerfile
+```
+
+
+# Dockerのイメージビルド
+
+
+```bash
+docker build -t イメージ名:タグ 対象ディレクトリ
 ```
 
 
