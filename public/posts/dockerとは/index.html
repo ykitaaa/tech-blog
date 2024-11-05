@@ -58,7 +58,8 @@ Docker Engine
 
 
 
-aa
+イメージ
+コンテナ
 Dockerの導入方法
 Dockerの設定ファイル
 基本形を並べてみる">
@@ -121,7 +122,8 @@ Docker Engine
 
 
 
-aa
+イメージ
+コンテナ
 Dockerの導入方法
 Dockerの設定ファイル
 基本形を並べてみる" />
@@ -177,7 +179,8 @@ Docker Engine
 
 
 
-aa
+イメージ
+コンテナ
 Dockerの導入方法
 Dockerの設定ファイル
 基本形を並べてみる" />
@@ -185,7 +188,7 @@ Dockerの設定ファイル
 <meta property="og:url" content="https://struggling-engineer.com/posts/docker%E3%81%A8%E3%81%AF/" />
 <meta property="article:section" content="posts" />
   <meta property="article:published_time" content="2024-10-28T10:52:00&#43;00:00" />
-  <meta property="article:modified_time" content="2024-10-30T10:58:00&#43;00:00" />
+  <meta property="article:modified_time" content="2024-11-05T11:33:00&#43;00:00" />
 
 
 <script type="application/ld+json">
@@ -214,14 +217,14 @@ Dockerの設定ファイル
   "@type": "BlogPosting",
   "headline": "Dockerとは？ | ykitaaa's tech blog",
   "name": "Dockerとは？",
-  "description": "経緯 ひさびさにDockerを触ろうとしたらいろいろ忘れているので復習\nDockerとは？ コンテナ型仮想技術 ホスト型ではなく、コンテナ型 ホスト型：ホストOSの上にハイパーバイザーを通じてゲストOSを動か メリット：マシンの完全コピー デメリット：容量が大きい 用語 ハイパーバイザー：コンピュータの仮想化技術（仮想マシンを作る）。例) VMWare コンテナ型：ホストOSの上にDocker Engineを通じてコンテナを動かす メリット①：OSカーネルを他のコンテナと共有\n→ 利用リソースがホスト型に比べて少ない メリット②：動作させるハードウェア環境に依存しない 設定ファイルで仮想環境が構築可能 メリット：プログラムの実行環境を共有できる 設定ファイルを渡せば同じ環境が作れる Docker Hubでも共有可能 Dockerの構成 sequenceDiagram Client -\u003e\u003eDockerHost: docker run DockerHost-\u003e\u003eClient Dockerの用語たち Docker Engine aa Dockerの導入方法 Dockerの設定ファイル 基本形を並べてみる\n",
+  "description": "経緯 ひさびさにDockerを触ろうとしたらいろいろ忘れているので復習\nDockerとは？ コンテナ型仮想技術 ホスト型ではなく、コンテナ型 ホスト型：ホストOSの上にハイパーバイザーを通じてゲストOSを動か メリット：マシンの完全コピー デメリット：容量が大きい 用語 ハイパーバイザー：コンピュータの仮想化技術（仮想マシンを作る）。例) VMWare コンテナ型：ホストOSの上にDocker Engineを通じてコンテナを動かす メリット①：OSカーネルを他のコンテナと共有\n→ 利用リソースがホスト型に比べて少ない メリット②：動作させるハードウェア環境に依存しない 設定ファイルで仮想環境が構築可能 メリット：プログラムの実行環境を共有できる 設定ファイルを渡せば同じ環境が作れる Docker Hubでも共有可能 Dockerの構成 sequenceDiagram Client -\u003e\u003eDockerHost: docker run DockerHost-\u003e\u003eClient Dockerの用語たち Docker Engine イメージ コンテナ Dockerの導入方法 Dockerの設定ファイル 基本形を並べてみる\n",
   "keywords": [
     
   ],
-  "wordCount" : "690",
+  "wordCount" : "697",
   "inLanguage": "ja",
   "datePublished": "2024-10-28T10:52:00Z",
-  "dateModified": "2024-10-30T10:58:00Z",
+  "dateModified": "2024-11-05T11:33:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://struggling-engineer.com/posts/docker%E3%81%A8%E3%81%AF/"
@@ -411,10 +414,12 @@ function toggleThemeListener() {
                     <a href="#docker%e3%81%ae%e7%94%a8%e8%aa%9e%e3%81%9f%e3%81%a1" aria-label="Dockerの用語たち">Dockerの用語たち</a><ul>
                         
                 <li>
-                    <a href="#docker-engine" aria-label="Docker Engine">Docker Engine</a></li></ul>
-                </li>
+                    <a href="#docker-engine" aria-label="Docker Engine">Docker Engine</a></li>
                 <li>
-                    <a href="#aa" aria-label="aa">aa</a></li>
+                    <a href="#%e3%82%a4%e3%83%a1%e3%83%bc%e3%82%b8" aria-label="イメージ">イメージ</a></li>
+                <li>
+                    <a href="#%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a" aria-label="コンテナ">コンテナ</a></li></ul>
+                </li>
                 <li>
                     <a href="#docker%e3%81%ae%e5%b0%8e%e5%85%a5%e6%96%b9%e6%b3%95" aria-label="Dockerの導入方法">Dockerの導入方法</a></li>
                 <li>
@@ -484,7 +489,8 @@ function toggleThemeListener() {
 <ul>
 <li></li>
 </ul>
-<h1 id="aa">aa<a hidden class="anchor" aria-hidden="true" href="#aa">¶</a></h1>
+<h2 id="イメージ">イメージ<a hidden class="anchor" aria-hidden="true" href="#イメージ">¶</a></h2>
+<h2 id="コンテナ">コンテナ<a hidden class="anchor" aria-hidden="true" href="#コンテナ">¶</a></h2>
 <h1 id="dockerの導入方法">Dockerの導入方法<a hidden class="anchor" aria-hidden="true" href="#dockerの導入方法">¶</a></h1>
 <h1 id="dockerの設定ファイル">Dockerの設定ファイル<a hidden class="anchor" aria-hidden="true" href="#dockerの設定ファイル">¶</a></h1>
 <p>基本形を並べてみる</p>
